@@ -2,15 +2,11 @@ package main
 
 import (
 	"fmt"
+	"iis_server/config"
 	"iis_server/scheduler"
 	"os"
 
 	"go.uber.org/zap"
-)
-
-const (
-	TMP_FOLDER    = "tmp"
-	UPLOAD_FOLDER = "upload"
 )
 
 func main() {
@@ -24,8 +20,8 @@ func main() {
 }
 
 func setup() error {
-	_ = os.Mkdir(UPLOAD_FOLDER, 0755)
-	_ = os.Mkdir(TMP_FOLDER, 0755)
+	_ = os.Mkdir(config.UPLOAD_FOLDER, 0755)
+	_ = os.Mkdir(config.TMP_FOLDER, 0755)
 
 	logger, err := zap.NewDevelopment()
 	if err != nil {

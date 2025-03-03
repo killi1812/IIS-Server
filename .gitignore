@@ -32,6 +32,8 @@ go.sum
 # old files
 .old
 
+*.swap
+
 # log
 log/
 *.log

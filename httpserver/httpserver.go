@@ -3,6 +3,7 @@ package httpserver
 import (
 	"context"
 	"errors"
+	"iis_server/httpserver/upload"
 	"net/http"
 	"sync"
 	"time"
@@ -80,4 +81,8 @@ func setupHandlers(router *httprouter.Router, schedulerCancel context.CancelFunc
 	router.GET("/", func(w http.ResponseWriter, r *http.Request, ps httprouter.Params) {
 		w.Write([]byte("Hello"))
 	})
+
+	uploadAndValidate := httprouter.Handle(upload.HandleUploadFile)
+	router.POST("/upload/xsd", uploadAndValidate)
+	router.POST("/upload/rng", uploadAndValidate)
 }

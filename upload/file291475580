@@ -1,0 +1,444 @@
+2024-10-17T10:42:57.666+0200	DEBUG	httpsrv5/main.go:150	httpsrv 0.0.1
+2024-10-17T10:42:57.667+0200	DEBUG	httpsrv5/main.go:151	Copyright (c) 20xx POINTER d.o.o. All rights reserved.
+2024-10-17T10:42:57.667+0200	DEBUG	httpsrv5/main.go:155	Host name = hr01np002011
+2024-10-17T10:42:57.667+0200	DEBUG	httpsrv5/main.go:158	Current folder = D:\Razvoj\_Radno\go\httpsrv5
+2024-10-17T10:42:57.667+0200	DEBUG	httpsrv5/main.go:163	Process id = 8768
+2024-10-17T10:42:57.668+0200	DEBUG	httpsrv5/main.go:167	0 = ALLUSERSPROFILE=C:\ProgramData
+2024-10-17T10:42:57.668+0200	DEBUG	httpsrv5/main.go:167	1 = APPDATA=C:\Users\bzecevic\AppData\Roaming
+2024-10-17T10:42:57.668+0200	DEBUG	httpsrv5/main.go:167	2 = COLORTERM=truecolor
+2024-10-17T10:42:57.668+0200	DEBUG	httpsrv5/main.go:167	3 = COMMONPROGRAMFILES(X86)=C:\Program Files (x86)\Common Files
+2024-10-17T10:42:57.668+0200	DEBUG	httpsrv5/main.go:167	4 = COMMONPROGRAMFILES=C:\Program Files\Common Files
+2024-10-17T10:42:57.668+0200	DEBUG	httpsrv5/main.go:167	5 = COMMONPROGRAMW6432=C:\Program Files\Common Files
+2024-10-17T10:42:57.668+0200	DEBUG	httpsrv5/main.go:167	6 = COMPUTERNAME=HR01NP002011
+2024-10-17T10:42:57.669+0200	DEBUG	httpsrv5/main.go:167	7 = COMSPEC=C:\Windows\system32\cmd.exe
+2024-10-17T10:42:57.669+0200	DEBUG	httpsrv5/main.go:167	8 = DRIVERDATA=C:\Windows\System32\Drivers\DriverData
+2024-10-17T10:42:57.669+0200	DEBUG	httpsrv5/main.go:167	9 = FPS_BROWSER_APP_PROFILE_STRING=Internet Explorer
+2024-10-17T10:42:57.669+0200	DEBUG	httpsrv5/main.go:167	10 = FPS_BROWSER_USER_PROFILE_STRING=Default
+2024-10-17T10:42:57.669+0200	DEBUG	httpsrv5/main.go:167	11 = GIT_ASKPASS=d:\Tools\VS-Code\resources\app\extensions\git\dist\askpass.sh
+2024-10-17T10:42:57.669+0200	DEBUG	httpsrv5/main.go:167	12 = GOPATH=C:\Users\bzecevic\go
+2024-10-17T10:42:57.670+0200	DEBUG	httpsrv5/main.go:167	13 = HOME=C:\Users\bzecevic
+2024-10-17T10:42:57.670+0200	DEBUG	httpsrv5/main.go:167	14 = HOMEDRIVE=U:
+2024-10-17T10:42:57.670+0200	DEBUG	httpsrv5/main.go:167	15 = HOMEPATH=\
+2024-10-17T10:42:57.670+0200	DEBUG	httpsrv5/main.go:167	16 = HOMESHARE=\\HR01SP001005\bzecevic
+2024-10-17T10:42:57.670+0200	DEBUG	httpsrv5/main.go:167	17 = LANG=en_US.UTF-8
+2024-10-17T10:42:57.670+0200	DEBUG	httpsrv5/main.go:167	18 = LOCALAPPDATA=C:\Users\bzecevic\AppData\Local
+2024-10-17T10:42:57.670+0200	DEBUG	httpsrv5/main.go:167	19 = LOGONSERVER=\\HR01SP001005
+2024-10-17T10:42:57.670+0200	DEBUG	httpsrv5/main.go:167	20 = NUMBER_OF_PROCESSORS=8
+2024-10-17T10:42:57.670+0200	DEBUG	httpsrv5/main.go:167	21 = NVM_HOME=D:\ToolsDev\nvm
+2024-10-17T10:42:57.671+0200	DEBUG	httpsrv5/main.go:167	22 = NVM_SYMLINK=D:\ToolsDev\nodejs
+2024-10-17T10:42:57.671+0200	DEBUG	httpsrv5/main.go:167	23 = ONEDRIVE=C:\Users\bzecevic\OneDrive
+2024-10-17T10:42:57.671+0200	DEBUG	httpsrv5/main.go:167	24 = ORIGINAL_XDG_CURRENT_DESKTOP=undefined
+2024-10-17T10:42:57.671+0200	DEBUG	httpsrv5/main.go:167	25 = OS=Windows_NT
+2024-10-17T10:42:57.671+0200	DEBUG	httpsrv5/main.go:167	26 = PATH=C:\Program Files (x86)\Common Files\Oracle\Java\java8path;C:\Program Files (x86)\Common Files\Oracle\Java\javapath;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Windows\System32\OpenSSH\;C:\Program Files\dotnet\;C:\Program Files\Microsoft SQL Server\130\Tools\Binn\;C:\Program Files\Microsoft SQL Server\Client SDK\ODBC\170\Tools\Binn\;d:\Tools\WinMerge;D:\ToolsDev\nvm;D:\ToolsDev\nodejs;d:\Tools\VS-Code\bin;D:\ToolsDev\Go\bin;D:\ToolsDev\Git\cmd;C:\Users\bzecevic\AppData\Local\Microsoft\WindowsApps;D:\Tools;D:\ToolsDev\Task;D:\ToolsDev\Nuwen-MinGW-18.0\bin;C:\Users\bzecevic\go\bin;
+2024-10-17T10:42:57.671+0200	DEBUG	httpsrv5/main.go:167	27 = PATHEXT=.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC
+2024-10-17T10:42:57.671+0200	DEBUG	httpsrv5/main.go:167	28 = PROCESSOR_ARCHITECTURE=AMD64
+2024-10-17T10:42:57.672+0200	DEBUG	httpsrv5/main.go:167	29 = PROCESSOR_IDENTIFIER=Intel64 Family 6 Model 142 Stepping 12, GenuineIntel
+2024-10-17T10:42:57.672+0200	DEBUG	httpsrv5/main.go:167	30 = PROCESSOR_LEVEL=6
+2024-10-17T10:42:57.672+0200	DEBUG	httpsrv5/main.go:167	31 = PROCESSOR_REVISION=8e0c
+2024-10-17T10:42:57.672+0200	DEBUG	httpsrv5/main.go:167	32 = PROGRAMDATA=C:\ProgramData
+2024-10-17T10:42:57.672+0200	DEBUG	httpsrv5/main.go:167	33 = PROGRAMFILES(X86)=C:\Program Files (x86)
+2024-10-17T10:42:57.672+0200	DEBUG	httpsrv5/main.go:167	34 = PROGRAMFILES=C:\Program Files
+2024-10-17T10:42:57.672+0200	DEBUG	httpsrv5/main.go:167	35 = PROGRAMW6432=C:\Program Files
+2024-10-17T10:42:57.672+0200	DEBUG	httpsrv5/main.go:167	36 = PROMPT=$P$G
+2024-10-17T10:42:57.673+0200	DEBUG	httpsrv5/main.go:167	37 = PSMODULEPATH=C:\Program Files\WindowsPowerShell\Modules;C:\Windows\system32\WindowsPowerShell\v1.0\Modules
+2024-10-17T10:42:57.673+0200	DEBUG	httpsrv5/main.go:167	38 = PUBLIC=C:\Users\Public
+2024-10-17T10:42:57.673+0200	DEBUG	httpsrv5/main.go:167	39 = SESSIONNAME=Console
+2024-10-17T10:42:57.673+0200	DEBUG	httpsrv5/main.go:167	40 = SYSTEMDRIVE=C:
+2024-10-17T10:42:57.673+0200	DEBUG	httpsrv5/main.go:167	41 = SYSTEMROOT=C:\Windows
+2024-10-17T10:42:57.673+0200	DEBUG	httpsrv5/main.go:167	42 = TEMP=C:\Users\bzecevic\AppData\Local\Temp
+2024-10-17T10:42:57.673+0200	DEBUG	httpsrv5/main.go:167	43 = TERM_PROGRAM=vscode
+2024-10-17T10:42:57.674+0200	DEBUG	httpsrv5/main.go:167	44 = TERM_PROGRAM_VERSION=1.94.2
+2024-10-17T10:42:57.674+0200	DEBUG	httpsrv5/main.go:167	45 = TMP=C:\Users\bzecevic\AppData\Local\Temp
+2024-10-17T10:42:57.674+0200	DEBUG	httpsrv5/main.go:167	46 = USERDOMAIN=HR01
+2024-10-17T10:42:57.675+0200	DEBUG	httpsrv5/main.go:167	47 = USERDOMAIN_ROAMINGPROFILE=HR01
+2024-10-17T10:42:57.675+0200	DEBUG	httpsrv5/main.go:167	48 = USERNAME=bzecevic
+2024-10-17T10:42:57.675+0200	DEBUG	httpsrv5/main.go:167	49 = USERPROFILE=C:\Users\bzecevic
+2024-10-17T10:42:57.675+0200	DEBUG	httpsrv5/main.go:167	50 = VBOX_MSI_INSTALL_PATH=C:\Program Files\Oracle\VirtualBox\
+2024-10-17T10:42:57.675+0200	DEBUG	httpsrv5/main.go:167	51 = VSCODE_GIT_ASKPASS_EXTRA_ARGS=
+2024-10-17T10:42:57.675+0200	DEBUG	httpsrv5/main.go:167	52 = VSCODE_GIT_ASKPASS_MAIN=d:\Tools\VS-Code\resources\app\extensions\git\dist\askpass-main.js
+2024-10-17T10:42:57.675+0200	DEBUG	httpsrv5/main.go:167	53 = VSCODE_GIT_ASKPASS_NODE=D:\Tools\VS-Code\Code.exe
+2024-10-17T10:42:57.676+0200	DEBUG	httpsrv5/main.go:167	54 = VSCODE_GIT_IPC_HANDLE=\\.\pipe\vscode-git-fd884d0e53-sock
+2024-10-17T10:42:57.676+0200	DEBUG	httpsrv5/main.go:167	55 = WINDIR=C:\Windows
+2024-10-17T10:42:57.676+0200	DEBUG	httpsrv5/main.go:167	56 = ZES_ENABLE_SYSMAN=1
+2024-10-17T10:42:57.676+0200	DEBUG	httpsrv5/main.go:171	Platform = windows
+2024-10-17T10:42:57.676+0200	DEBUG	httpsrv5/main.go:172	Go version = go1.22.2
+2024-10-17T10:42:57.676+0200	DEBUG	httpsrv5/main.go:175	Command line = [.\bin\httpsrv.exe]
+2024-10-17T10:42:57.676+0200	DEBUG	config/config.go:61	Country is supported, code = hr
+2024-10-17T10:42:57.677+0200	DEBUG	config/config.go:73	Port = 6666
+2024-10-17T10:42:57.677+0200	DEBUG	config/config.go:75	Program configuration = {CountryCode:hr Port:6666 ClientTimeout:3}
+2024-10-17T10:42:57.677+0200	DEBUG	scheduler/scheduler.go:40	Created scheduler context
+2024-10-17T10:42:57.677+0200	DEBUG	scheduler/scheduler.go:45	Started CheckInterrupt
+2024-10-17T10:42:57.677+0200	DEBUG	scheduler/scheduler.go:50	Started HTTP server
+2024-10-17T10:42:57.677+0200	DEBUG	httpserver/httpserver.go:62	Started HTTP listen, address = :6666
+2024-10-17T10:42:59.438+0200	DEBUG	scheduler/scheduler.go:72	Received signal on notification channel, signal = interrupt
+2024-10-17T10:42:59.439+0200	DEBUG	scheduler/scheduler.go:67	Terminated CheckInterrupt
+2024-10-17T10:42:59.439+0200	DEBUG	httpserver/httpserver.go:57	HTTP server is closed
+2024-10-17T10:42:59.439+0200	DEBUG	httpserver/httpserver.go:77	HTTP server was shut down
+2024-10-17T10:42:59.442+0200	DEBUG	scheduler/scheduler.go:55	Terminated program
+2024-10-18T10:32:36.032+0200	DEBUG	httpsrv5/main.go:154	httpsrv 0.0.1
+2024-10-18T10:32:36.032+0200	DEBUG	httpsrv5/main.go:155	Copyright (c) 20xx POINTER d.o.o. All rights reserved.
+2024-10-18T10:32:36.032+0200	DEBUG	httpsrv5/main.go:159	Host name = fran-pc
+2024-10-18T10:32:36.032+0200	DEBUG	httpsrv5/main.go:162	Current folder = /home/fran/Documents/posao/httpsrv5
+2024-10-18T10:32:36.032+0200	DEBUG	httpsrv5/main.go:167	Process id = 329638
+2024-10-18T10:32:36.032+0200	DEBUG	httpsrv5/main.go:171	0 = ANDROID_HOME=/opt/android-sdk
+2024-10-18T10:32:36.032+0200	DEBUG	httpsrv5/main.go:171	1 = ANDROID_SDK_ROOT=/opt/android-sdk
+2024-10-18T10:32:36.032+0200	DEBUG	httpsrv5/main.go:171	2 = ATUIN_HISTORY_ID=01929ec1d4a87d28b1183978b5309b58
+2024-10-18T10:32:36.032+0200	DEBUG	httpsrv5/main.go:171	3 = ATUIN_SESSION=01929a2e44ef7ce7a92e4d6c10f68ee2
+2024-10-18T10:32:36.032+0200	DEBUG	httpsrv5/main.go:171	4 = COLORTERM=truecolor
+2024-10-18T10:32:36.032+0200	DEBUG	httpsrv5/main.go:171	5 = DBUS_SESSION_BUS_ADDRESS=unix:path=/run/user/1000/bus
+2024-10-18T10:32:36.032+0200	DEBUG	httpsrv5/main.go:171	6 = DEBUGINFOD_URLS=https://debuginfod.archlinux.org 
+2024-10-18T10:32:36.032+0200	DEBUG	httpsrv5/main.go:171	7 = DESKTOP_SESSION=gnome
+2024-10-18T10:32:36.032+0200	DEBUG	httpsrv5/main.go:171	8 = DISPLAY=:0
+2024-10-18T10:32:36.032+0200	DEBUG	httpsrv5/main.go:171	9 = EDITOR=/usr/bin/nano
+2024-10-18T10:32:36.032+0200	DEBUG	httpsrv5/main.go:171	10 = GDMSESSION=gnome
+2024-10-18T10:32:36.032+0200	DEBUG	httpsrv5/main.go:171	11 = GDM_LANG=en_US.UTF-8
+2024-10-18T10:32:36.032+0200	DEBUG	httpsrv5/main.go:171	12 = GNOME_KEYRING_CONTROL=/run/user/1000/keyring
+2024-10-18T10:32:36.032+0200	DEBUG	httpsrv5/main.go:171	13 = GNOME_SETUP_DISPLAY=:1
+2024-10-18T10:32:36.032+0200	DEBUG	httpsrv5/main.go:171	14 = GNOME_TERMINAL_SCREEN=/org/gnome/Terminal/screen/a60fbca9_6d97_4e9a_9327_d6c0ac188a67
+2024-10-18T10:32:36.032+0200	DEBUG	httpsrv5/main.go:171	15 = GNOME_TERMINAL_SERVICE=:1.135
+2024-10-18T10:32:36.032+0200	DEBUG	httpsrv5/main.go:171	16 = HOME=/home/fran
+2024-10-18T10:32:36.032+0200	DEBUG	httpsrv5/main.go:171	17 = LANG=en_US.UTF-8
+2024-10-18T10:32:36.032+0200	DEBUG	httpsrv5/main.go:171	18 = LC_ADDRESS=hr_HR.UTF-8
+2024-10-18T10:32:36.032+0200	DEBUG	httpsrv5/main.go:171	19 = LC_IDENTIFICATION=hr_HR.UTF-8
+2024-10-18T10:32:36.032+0200	DEBUG	httpsrv5/main.go:171	20 = LC_MEASUREMENT=hr_HR.UTF-8
+2024-10-18T10:32:36.032+0200	DEBUG	httpsrv5/main.go:171	21 = LC_MONETARY=hr_HR.UTF-8
+2024-10-18T10:32:36.032+0200	DEBUG	httpsrv5/main.go:171	22 = LC_NAME=hr_HR.UTF-8
+2024-10-18T10:32:36.032+0200	DEBUG	httpsrv5/main.go:171	23 = LC_NUMERIC=hr_HR.UTF-8
+2024-10-18T10:32:36.032+0200	DEBUG	httpsrv5/main.go:171	24 = LC_PAPER=hr_HR.UTF-8
+2024-10-18T10:32:36.032+0200	DEBUG	httpsrv5/main.go:171	25 = LC_TELEPHONE=hr_HR.UTF-8
+2024-10-18T10:32:36.032+0200	DEBUG	httpsrv5/main.go:171	26 = LC_TIME=hr_HR.UTF-8
+2024-10-18T10:32:36.032+0200	DEBUG	httpsrv5/main.go:171	27 = LESS=-R
+2024-10-18T10:32:36.032+0200	DEBUG	httpsrv5/main.go:171	28 = LOGNAME=fran
+2024-10-18T10:32:36.032+0200	DEBUG	httpsrv5/main.go:171	29 = LSCOLORS=Gxfxcxdxbxegedabagacad
+2024-10-18T10:32:36.032+0200	DEBUG	httpsrv5/main.go:171	30 = LS_COLORS=rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=00:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.7z=01;31:*.ace=01;31:*.alz=01;31:*.apk=01;31:*.arc=01;31:*.arj=01;31:*.bz=01;31:*.bz2=01;31:*.cab=01;31:*.cpio=01;31:*.crate=01;31:*.deb=01;31:*.drpm=01;31:*.dwm=01;31:*.dz=01;31:*.ear=01;31:*.egg=01;31:*.esd=01;31:*.gz=01;31:*.jar=01;31:*.lha=01;31:*.lrz=01;31:*.lz=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.lzo=01;31:*.pyz=01;31:*.rar=01;31:*.rpm=01;31:*.rz=01;31:*.sar=01;31:*.swm=01;31:*.t7z=01;31:*.tar=01;31:*.taz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tgz=01;31:*.tlz=01;31:*.txz=01;31:*.tz=01;31:*.tzo=01;31:*.tzst=01;31:*.udeb=01;31:*.war=01;31:*.whl=01;31:*.wim=01;31:*.xz=01;31:*.z=01;31:*.zip=01;31:*.zoo=01;31:*.zst=01;31:*.avif=01;35:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:*~=00;90:*#=00;90:*.bak=00;90:*.crdownload=00;90:*.dpkg-dist=00;90:*.dpkg-new=00;90:*.dpkg-old=00;90:*.dpkg-tmp=00;90:*.old=00;90:*.orig=00;90:*.part=00;90:*.rej=00;90:*.rpmnew=00;90:*.rpmorig=00;90:*.rpmsave=00;90:*.swp=00;90:*.tmp=00;90:*.ucf-dist=00;90:*.ucf-new=00;90:*.ucf-old=00;90:
+2024-10-18T10:32:36.032+0200	DEBUG	httpsrv5/main.go:171	31 = MAIL=/var/spool/mail/fran
+2024-10-18T10:32:36.032+0200	DEBUG	httpsrv5/main.go:171	32 = MEMORY_PRESSURE_WATCH=/sys/fs/cgroup/user.slice/user-1000.slice/user@1000.service/session.slice/org.gnome.SettingsDaemon.MediaKeys.service/memory.pressure
+2024-10-18T10:32:36.032+0200	DEBUG	httpsrv5/main.go:171	33 = MEMORY_PRESSURE_WRITE=c29tZSAyMDAwMDAgMjAwMDAwMAA=
+2024-10-18T10:32:36.032+0200	DEBUG	httpsrv5/main.go:171	34 = MOTD_SHOWN=pam
+2024-10-18T10:32:36.032+0200	DEBUG	httpsrv5/main.go:171	35 = OLDPWD=/home/fran/Documents/posao/httpsrv5/log
+2024-10-18T10:32:36.032+0200	DEBUG	httpsrv5/main.go:171	36 = PAGER=less
+2024-10-18T10:32:36.032+0200	DEBUG	httpsrv5/main.go:171	37 = PATH=/home/fran/go/bin/:/home/fran/.local/bin:/usr/local/bin:/usr/bin:/usr/local/sbin:/opt/android-sdk/tools:/opt/android-sdk/tools/bin:/usr/lib/jvm/default/bin:/usr/bin/site_perl:/usr/bin/vendor_perl:/usr/bin/core_perl
+2024-10-18T10:32:36.032+0200	DEBUG	httpsrv5/main.go:171	38 = QT_AUTO_SCREEN_SCALE_FACTOR=1
+2024-10-18T10:32:36.032+0200	DEBUG	httpsrv5/main.go:171	39 = QT_IM_MODULE=ibus
+2024-10-18T10:32:36.032+0200	DEBUG	httpsrv5/main.go:171	40 = QT_QPA_PLATFORMTHEME=qt5ct
+2024-10-18T10:32:36.032+0200	DEBUG	httpsrv5/main.go:171	41 = SESSION_MANAGER=local/fran-pc:@/tmp/.ICE-unix/996,unix/fran-pc:/tmp/.ICE-unix/996
+2024-10-18T10:32:36.032+0200	DEBUG	httpsrv5/main.go:171	42 = SHELL=/bin/zsh
+2024-10-18T10:32:36.032+0200	DEBUG	httpsrv5/main.go:171	43 = SHLVL=1
+2024-10-18T10:32:36.032+0200	DEBUG	httpsrv5/main.go:171	44 = SYSTEMD_EXEC_PID=1199
+2024-10-18T10:32:36.032+0200	DEBUG	httpsrv5/main.go:171	45 = TERM=xterm-256color
+2024-10-18T10:32:36.032+0200	DEBUG	httpsrv5/main.go:171	46 = USER=fran
+2024-10-18T10:32:36.032+0200	DEBUG	httpsrv5/main.go:171	47 = USERNAME=fran
+2024-10-18T10:32:36.032+0200	DEBUG	httpsrv5/main.go:171	48 = VTE_VERSION=7604
+2024-10-18T10:32:36.032+0200	DEBUG	httpsrv5/main.go:171	49 = WAYLAND_DISPLAY=wayland-0
+2024-10-18T10:32:36.032+0200	DEBUG	httpsrv5/main.go:171	50 = XAUTHORITY=/run/user/1000/.mutter-Xwaylandauth.QBRHV2
+2024-10-18T10:32:36.032+0200	DEBUG	httpsrv5/main.go:171	51 = XDG_CURRENT_DESKTOP=GNOME
+2024-10-18T10:32:36.032+0200	DEBUG	httpsrv5/main.go:171	52 = XDG_DATA_DIRS=/home/fran/.local/share/flatpak/exports/share:/var/lib/flatpak/exports/share:/usr/local/share/:/usr/share/
+2024-10-18T10:32:36.032+0200	DEBUG	httpsrv5/main.go:171	53 = XDG_MENU_PREFIX=gnome-
+2024-10-18T10:32:36.032+0200	DEBUG	httpsrv5/main.go:171	54 = XDG_RUNTIME_DIR=/run/user/1000
+2024-10-18T10:32:36.032+0200	DEBUG	httpsrv5/main.go:171	55 = XDG_SESSION_CLASS=user
+2024-10-18T10:32:36.032+0200	DEBUG	httpsrv5/main.go:171	56 = XDG_SESSION_DESKTOP=gnome
+2024-10-18T10:32:36.032+0200	DEBUG	httpsrv5/main.go:171	57 = XDG_SESSION_TYPE=wayland
+2024-10-18T10:32:36.032+0200	DEBUG	httpsrv5/main.go:171	58 = XMODIFIERS=@im=ibus
+2024-10-18T10:32:36.032+0200	DEBUG	httpsrv5/main.go:171	59 = ZSH=/usr/share/oh-my-zsh/
+2024-10-18T10:32:36.032+0200	DEBUG	httpsrv5/main.go:171	60 = _=/home/fran/go/bin//task
+2024-10-18T10:32:36.032+0200	DEBUG	httpsrv5/main.go:171	61 = PWD=/home/fran/Documents/posao/httpsrv5
+2024-10-18T10:32:36.032+0200	DEBUG	httpsrv5/main.go:175	Platform = linux
+2024-10-18T10:32:36.032+0200	DEBUG	httpsrv5/main.go:176	Go version = go1.23.1
+2024-10-18T10:32:36.032+0200	DEBUG	httpsrv5/main.go:179	Command line = [./bin/generic]
+2024-10-18T10:32:36.033+0200	DEBUG	httpsrv5/main.go:185	Program configuration = {CountryCode:hr Port:6666 ClientTimeout:3}
+2024-10-18T10:32:36.033+0200	DEBUG	config/config.go:61	Country is supported, code = hr
+2024-10-18T10:32:36.033+0200	DEBUG	config/config.go:73	Port = 6666
+2024-10-18T10:32:36.033+0200	DEBUG	config/config.go:75	Program configuration = {CountryCode:hr Port:6666 ClientTimeout:3}
+2024-10-18T10:32:36.033+0200	DEBUG	scheduler/scheduler.go:40	Created scheduler context
+2024-10-18T10:32:36.033+0200	DEBUG	scheduler/scheduler.go:45	Started CheckInterrupt
+2024-10-18T10:32:36.033+0200	DEBUG	scheduler/scheduler.go:50	Started HTTP server
+2024-10-18T10:32:36.033+0200	DEBUG	httpserver/httpserver.go:62	Started HTTP listen, address = :6666
+2024-10-18T10:32:39.981+0200	DEBUG	scheduler/scheduler.go:72	Received signal on notification channel, signal = interrupt
+2024-10-18T10:32:39.981+0200	DEBUG	scheduler/scheduler.go:67	Terminated CheckInterrupt
+2024-10-18T10:32:39.981+0200	DEBUG	httpserver/httpserver.go:57	HTTP server is closed
+2024-10-18T10:32:39.981+0200	DEBUG	httpserver/httpserver.go:77	HTTP server was shut down
+2024-10-18T10:32:39.981+0200	DEBUG	scheduler/scheduler.go:55	Terminated program
+2024-10-18T10:32:48.703+0200	DEBUG	httpsrv5/main.go:154	httpsrv 0.0.1
+2024-10-18T10:32:48.703+0200	DEBUG	httpsrv5/main.go:155	Copyright (c) 20xx POINTER d.o.o. All rights reserved.
+2024-10-18T10:32:48.704+0200	DEBUG	httpsrv5/main.go:159	Host name = fran-pc
+2024-10-18T10:32:48.704+0200	DEBUG	httpsrv5/main.go:162	Current folder = /home/fran/Documents/posao/httpsrv5
+2024-10-18T10:32:48.704+0200	DEBUG	httpsrv5/main.go:167	Process id = 329832
+2024-10-18T10:32:48.704+0200	DEBUG	httpsrv5/main.go:171	0 = ANDROID_HOME=/opt/android-sdk
+2024-10-18T10:32:48.704+0200	DEBUG	httpsrv5/main.go:171	1 = ANDROID_SDK_ROOT=/opt/android-sdk
+2024-10-18T10:32:48.704+0200	DEBUG	httpsrv5/main.go:171	2 = ATUIN_HISTORY_ID=01929ec2062272c790d1080b75dfda45
+2024-10-18T10:32:48.704+0200	DEBUG	httpsrv5/main.go:171	3 = ATUIN_SESSION=01929ec1f1f07e919e5e065d8722a0fe
+2024-10-18T10:32:48.704+0200	DEBUG	httpsrv5/main.go:171	4 = COLORTERM=truecolor
+2024-10-18T10:32:48.704+0200	DEBUG	httpsrv5/main.go:171	5 = DBUS_SESSION_BUS_ADDRESS=unix:path=/run/user/1000/bus
+2024-10-18T10:32:48.704+0200	DEBUG	httpsrv5/main.go:171	6 = DEBUGINFOD_URLS=https://debuginfod.archlinux.org 
+2024-10-18T10:32:48.704+0200	DEBUG	httpsrv5/main.go:171	7 = DESKTOP_SESSION=gnome
+2024-10-18T10:32:48.704+0200	DEBUG	httpsrv5/main.go:171	8 = DISPLAY=:0
+2024-10-18T10:32:48.704+0200	DEBUG	httpsrv5/main.go:171	9 = EDITOR=/usr/bin/nano
+2024-10-18T10:32:48.704+0200	DEBUG	httpsrv5/main.go:171	10 = GDMSESSION=gnome
+2024-10-18T10:32:48.704+0200	DEBUG	httpsrv5/main.go:171	11 = GDM_LANG=en_US.UTF-8
+2024-10-18T10:32:48.704+0200	DEBUG	httpsrv5/main.go:171	12 = GNOME_KEYRING_CONTROL=/run/user/1000/keyring
+2024-10-18T10:32:48.704+0200	DEBUG	httpsrv5/main.go:171	13 = GNOME_SETUP_DISPLAY=:1
+2024-10-18T10:32:48.704+0200	DEBUG	httpsrv5/main.go:171	14 = GNOME_TERMINAL_SCREEN=/org/gnome/Terminal/screen/a60fbca9_6d97_4e9a_9327_d6c0ac188a67
+2024-10-18T10:32:48.704+0200	DEBUG	httpsrv5/main.go:171	15 = GNOME_TERMINAL_SERVICE=:1.135
+2024-10-18T10:32:48.704+0200	DEBUG	httpsrv5/main.go:171	16 = HOME=/home/fran
+2024-10-18T10:32:48.704+0200	DEBUG	httpsrv5/main.go:171	17 = LANG=en_US.UTF-8
+2024-10-18T10:32:48.704+0200	DEBUG	httpsrv5/main.go:171	18 = LC_ADDRESS=hr_HR.UTF-8
+2024-10-18T10:32:48.704+0200	DEBUG	httpsrv5/main.go:171	19 = LC_IDENTIFICATION=hr_HR.UTF-8
+2024-10-18T10:32:48.704+0200	DEBUG	httpsrv5/main.go:171	20 = LC_MEASUREMENT=hr_HR.UTF-8
+2024-10-18T10:32:48.704+0200	DEBUG	httpsrv5/main.go:171	21 = LC_MONETARY=hr_HR.UTF-8
+2024-10-18T10:32:48.704+0200	DEBUG	httpsrv5/main.go:171	22 = LC_NAME=hr_HR.UTF-8
+2024-10-18T10:32:48.704+0200	DEBUG	httpsrv5/main.go:171	23 = LC_NUMERIC=hr_HR.UTF-8
+2024-10-18T10:32:48.704+0200	DEBUG	httpsrv5/main.go:171	24 = LC_PAPER=hr_HR.UTF-8
+2024-10-18T10:32:48.704+0200	DEBUG	httpsrv5/main.go:171	25 = LC_TELEPHONE=hr_HR.UTF-8
+2024-10-18T10:32:48.704+0200	DEBUG	httpsrv5/main.go:171	26 = LC_TIME=hr_HR.UTF-8
+2024-10-18T10:32:48.704+0200	DEBUG	httpsrv5/main.go:171	27 = LESS=-R
+2024-10-18T10:32:48.704+0200	DEBUG	httpsrv5/main.go:171	28 = LOGNAME=fran
+2024-10-18T10:32:48.704+0200	DEBUG	httpsrv5/main.go:171	29 = LSCOLORS=Gxfxcxdxbxegedabagacad
+2024-10-18T10:32:48.704+0200	DEBUG	httpsrv5/main.go:171	30 = LS_COLORS=rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=00:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.7z=01;31:*.ace=01;31:*.alz=01;31:*.apk=01;31:*.arc=01;31:*.arj=01;31:*.bz=01;31:*.bz2=01;31:*.cab=01;31:*.cpio=01;31:*.crate=01;31:*.deb=01;31:*.drpm=01;31:*.dwm=01;31:*.dz=01;31:*.ear=01;31:*.egg=01;31:*.esd=01;31:*.gz=01;31:*.jar=01;31:*.lha=01;31:*.lrz=01;31:*.lz=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.lzo=01;31:*.pyz=01;31:*.rar=01;31:*.rpm=01;31:*.rz=01;31:*.sar=01;31:*.swm=01;31:*.t7z=01;31:*.tar=01;31:*.taz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tgz=01;31:*.tlz=01;31:*.txz=01;31:*.tz=01;31:*.tzo=01;31:*.tzst=01;31:*.udeb=01;31:*.war=01;31:*.whl=01;31:*.wim=01;31:*.xz=01;31:*.z=01;31:*.zip=01;31:*.zoo=01;31:*.zst=01;31:*.avif=01;35:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:*~=00;90:*#=00;90:*.bak=00;90:*.crdownload=00;90:*.dpkg-dist=00;90:*.dpkg-new=00;90:*.dpkg-old=00;90:*.dpkg-tmp=00;90:*.old=00;90:*.orig=00;90:*.part=00;90:*.rej=00;90:*.rpmnew=00;90:*.rpmorig=00;90:*.rpmsave=00;90:*.swp=00;90:*.tmp=00;90:*.ucf-dist=00;90:*.ucf-new=00;90:*.ucf-old=00;90:
+2024-10-18T10:32:48.704+0200	DEBUG	httpsrv5/main.go:171	31 = MAIL=/var/spool/mail/fran
+2024-10-18T10:32:48.704+0200	DEBUG	httpsrv5/main.go:171	32 = MEMORY_PRESSURE_WATCH=/sys/fs/cgroup/user.slice/user-1000.slice/user@1000.service/session.slice/org.gnome.SettingsDaemon.MediaKeys.service/memory.pressure
+2024-10-18T10:32:48.704+0200	DEBUG	httpsrv5/main.go:171	33 = MEMORY_PRESSURE_WRITE=c29tZSAyMDAwMDAgMjAwMDAwMAA=
+2024-10-18T10:32:48.704+0200	DEBUG	httpsrv5/main.go:171	34 = MOTD_SHOWN=pam
+2024-10-18T10:32:48.704+0200	DEBUG	httpsrv5/main.go:171	35 = MYVIMRC=/home/fran/.config/nvim/init.lua
+2024-10-18T10:32:48.704+0200	DEBUG	httpsrv5/main.go:171	36 = NVIM=/run/user/1000/nvim.329691.0
+2024-10-18T10:32:48.704+0200	DEBUG	httpsrv5/main.go:171	37 = NVIM_LOG_FILE=/home/fran/.local/state/nvim/log
+2024-10-18T10:32:48.704+0200	DEBUG	httpsrv5/main.go:171	38 = OLDPWD=/home/fran/Documents/posao/httpsrv5
+2024-10-18T10:32:48.704+0200	DEBUG	httpsrv5/main.go:171	39 = PAGER=less
+2024-10-18T10:32:48.704+0200	DEBUG	httpsrv5/main.go:171	40 = PATH=/home/fran/go/bin/:/home/fran/go/bin/:/home/fran/.local/bin:/usr/local/bin:/usr/bin:/usr/local/sbin:/opt/android-sdk/tools:/opt/android-sdk/tools/bin:/usr/lib/jvm/default/bin:/usr/bin/site_perl:/usr/bin/vendor_perl:/usr/bin/core_perl
+2024-10-18T10:32:48.704+0200	DEBUG	httpsrv5/main.go:171	41 = QT_AUTO_SCREEN_SCALE_FACTOR=1
+2024-10-18T10:32:48.704+0200	DEBUG	httpsrv5/main.go:171	42 = QT_IM_MODULE=ibus
+2024-10-18T10:32:48.704+0200	DEBUG	httpsrv5/main.go:171	43 = QT_QPA_PLATFORMTHEME=qt5ct
+2024-10-18T10:32:48.704+0200	DEBUG	httpsrv5/main.go:171	44 = SESSION_MANAGER=local/fran-pc:@/tmp/.ICE-unix/996,unix/fran-pc:/tmp/.ICE-unix/996
+2024-10-18T10:32:48.704+0200	DEBUG	httpsrv5/main.go:171	45 = SHELL=/bin/zsh
+2024-10-18T10:32:48.704+0200	DEBUG	httpsrv5/main.go:171	46 = SHLVL=2
+2024-10-18T10:32:48.704+0200	DEBUG	httpsrv5/main.go:171	47 = SYSTEMD_EXEC_PID=1199
+2024-10-18T10:32:48.704+0200	DEBUG	httpsrv5/main.go:171	48 = TERM=xterm-256color
+2024-10-18T10:32:48.704+0200	DEBUG	httpsrv5/main.go:171	49 = USER=fran
+2024-10-18T10:32:48.704+0200	DEBUG	httpsrv5/main.go:171	50 = USERNAME=fran
+2024-10-18T10:32:48.704+0200	DEBUG	httpsrv5/main.go:171	51 = VTE_VERSION=7604
+2024-10-18T10:32:48.704+0200	DEBUG	httpsrv5/main.go:171	52 = WAYLAND_DISPLAY=wayland-0
+2024-10-18T10:32:48.704+0200	DEBUG	httpsrv5/main.go:171	53 = XAUTHORITY=/run/user/1000/.mutter-Xwaylandauth.QBRHV2
+2024-10-18T10:32:48.704+0200	DEBUG	httpsrv5/main.go:171	54 = XDG_CURRENT_DESKTOP=GNOME
+2024-10-18T10:32:48.704+0200	DEBUG	httpsrv5/main.go:171	55 = XDG_DATA_DIRS=/home/fran/.local/share/flatpak/exports/share:/var/lib/flatpak/exports/share:/usr/local/share/:/usr/share/
+2024-10-18T10:32:48.704+0200	DEBUG	httpsrv5/main.go:171	56 = XDG_MENU_PREFIX=gnome-
+2024-10-18T10:32:48.704+0200	DEBUG	httpsrv5/main.go:171	57 = XDG_RUNTIME_DIR=/run/user/1000
+2024-10-18T10:32:48.704+0200	DEBUG	httpsrv5/main.go:171	58 = XDG_SESSION_CLASS=user
+2024-10-18T10:32:48.704+0200	DEBUG	httpsrv5/main.go:171	59 = XDG_SESSION_DESKTOP=gnome
+2024-10-18T10:32:48.704+0200	DEBUG	httpsrv5/main.go:171	60 = XDG_SESSION_TYPE=wayland
+2024-10-18T10:32:48.704+0200	DEBUG	httpsrv5/main.go:171	61 = XMODIFIERS=@im=ibus
+2024-10-18T10:32:48.704+0200	DEBUG	httpsrv5/main.go:171	62 = ZSH=/usr/share/oh-my-zsh/
+2024-10-18T10:32:48.704+0200	DEBUG	httpsrv5/main.go:171	63 = _=/home/fran/go/bin//task
+2024-10-18T10:32:48.704+0200	DEBUG	httpsrv5/main.go:171	64 = PWD=/home/fran/Documents/posao/httpsrv5
+2024-10-18T10:32:48.704+0200	DEBUG	httpsrv5/main.go:175	Platform = linux
+2024-10-18T10:32:48.704+0200	DEBUG	httpsrv5/main.go:176	Go version = go1.23.1
+2024-10-18T10:32:48.704+0200	DEBUG	httpsrv5/main.go:179	Command line = [./bin/generic]
+2024-10-18T10:32:48.705+0200	DEBUG	httpsrv5/main.go:185	Program configuration = {CountryCode:hr Port:6666 ClientTimeout:3}
+2024-10-18T10:32:48.705+0200	DEBUG	config/config.go:61	Country is supported, code = hr
+2024-10-18T10:32:48.705+0200	DEBUG	config/config.go:73	Port = 6666
+2024-10-18T10:32:48.705+0200	DEBUG	config/config.go:75	Program configuration = {CountryCode:hr Port:6666 ClientTimeout:3}
+2024-10-18T10:32:48.705+0200	DEBUG	scheduler/scheduler.go:40	Created scheduler context
+2024-10-18T10:32:48.705+0200	DEBUG	scheduler/scheduler.go:45	Started CheckInterrupt
+2024-10-18T10:32:48.705+0200	DEBUG	scheduler/scheduler.go:50	Started HTTP server
+2024-10-18T10:32:48.705+0200	DEBUG	httpserver/httpserver.go:62	Started HTTP listen, address = :6666
+2024-10-18T10:33:21.692+0200	DEBUG	data/getData.go:41	Client request = &{Method:POST URL:/getData Proto:HTTP/1.1 ProtoMajor:1 ProtoMinor:1 Header:map[Accept:[application/json] Content-Length:[139] Content-Type:[application/json] User-Agent:[rest.nvim v3.8.3]] Body:0xc00011a1c0 GetBody:<nil> ContentLength:139 TransferEncoding:[] Close:false Host:127.0.0.1:6666 Form:map[] PostForm:map[] MultipartForm:<nil> Trailer:map[] RemoteAddr:127.0.0.1:54036 RequestURI:/getData TLS:<nil> Cancel:<nil> Response:<nil> Pattern: ctx:0xc000116190 pat:<nil> matches:[] otherValues:map[]}
+2024-10-18T10:33:21.692+0200	DEBUG	data/getData.go:66	Client request = {Id:id-1234567890 Type:data Payload:{Date:S1234/1-1 StatusCode:0}}
+2024-10-18T10:33:21.693+0200	DEBUG	httpio/response.go:82	Response to client, http status = 200, response = {StatusCode:0 Status:no error StatusExt: TimeStamp:2024-10-18T10:33:21.693002344+02:00 Payload:{Data:[{Id:0 Num:111 WorkDate:2023-01-01 Amount:0}]}}
+2024-10-18T10:33:44.605+0200	DEBUG	data/getData.go:41	Client request = &{Method:POST URL:/getData Proto:HTTP/1.1 ProtoMajor:1 ProtoMinor:1 Header:map[Accept:[application/json] Content-Length:[139] Content-Type:[application/json] User-Agent:[rest.nvim v3.8.3]] Body:0xc0001b8040 GetBody:<nil> ContentLength:139 TransferEncoding:[] Close:false Host:127.0.0.1:6666 Form:map[] PostForm:map[] MultipartForm:<nil> Trailer:map[] RemoteAddr:127.0.0.1:58204 RequestURI:/getData TLS:<nil> Cancel:<nil> Response:<nil> Pattern: ctx:0xc0001a40f0 pat:<nil> matches:[] otherValues:map[]}
+2024-10-18T10:33:44.605+0200	DEBUG	data/getData.go:66	Client request = {Id:id-1234567890 Type:data Payload:{Date:S1234/1-1 StatusCode:0}}
+2024-10-18T10:33:44.605+0200	DEBUG	httpio/response.go:82	Response to client, http status = 200, response = {StatusCode:0 Status:no error StatusExt: TimeStamp:2024-10-18T10:33:44.605946609+02:00 Payload:{Data:[{Id:0 Num:111 WorkDate:2023-01-01 Amount:0}]}}
+2024-10-18T10:34:16.231+0200	DEBUG	mgmt/shutdownServer.go:29	Client request = &{Method:GET URL:/shutdownServer Proto:HTTP/1.1 ProtoMajor:1 ProtoMinor:1 Header:map[Accept:[application/json] User-Agent:[rest.nvim v3.8.3]] Body:{} GetBody:<nil> ContentLength:0 TransferEncoding:[] Close:false Host:127.0.0.1:6666 Form:map[] PostForm:map[] MultipartForm:<nil> Trailer:map[] RemoteAddr:127.0.0.1:52280 RequestURI:/shutdownServer TLS:<nil> Cancel:<nil> Response:<nil> Pattern: ctx:0xc0001162d0 pat:<nil> matches:[] otherValues:map[]}
+2024-10-18T10:34:16.231+0200	DEBUG	httpio/response.go:82	Response to client, http status = 200, response = {StatusCode:0 Status:no error StatusExt: TimeStamp:2024-10-18T10:34:16.231368763+02:00 Payload:{ShutdownStatus:accepted}}
+2024-10-18T10:34:18.231+0200	DEBUG	mgmt/shutdownServer.go:41	Sent signal to shut down server
+2024-10-18T10:34:18.231+0200	DEBUG	scheduler/scheduler.go:67	Terminated CheckInterrupt
+2024-10-18T10:34:18.231+0200	DEBUG	httpserver/httpserver.go:57	HTTP server is closed
+2024-10-18T10:34:18.232+0200	DEBUG	httpserver/httpserver.go:77	HTTP server was shut down
+2024-10-18T10:34:18.232+0200	DEBUG	scheduler/scheduler.go:55	Terminated program
+2024-10-18T10:39:26.577+0200	DEBUG	httpsrv5/main.go:154	httpsrv 0.0.1
+2024-10-18T10:39:26.577+0200	DEBUG	httpsrv5/main.go:155	Copyright (c) 20xx POINTER d.o.o. All rights reserved.
+2024-10-18T10:39:26.577+0200	DEBUG	httpsrv5/main.go:159	Host name = fran-pc
+2024-10-18T10:39:26.577+0200	DEBUG	httpsrv5/main.go:162	Current folder = /home/fran/Documents/posao/httpsrv5
+2024-10-18T10:39:26.577+0200	DEBUG	httpsrv5/main.go:167	Process id = 331805
+2024-10-18T10:39:26.577+0200	DEBUG	httpsrv5/main.go:171	0 = ANDROID_HOME=/opt/android-sdk
+2024-10-18T10:39:26.577+0200	DEBUG	httpsrv5/main.go:171	1 = ANDROID_SDK_ROOT=/opt/android-sdk
+2024-10-18T10:39:26.578+0200	DEBUG	httpsrv5/main.go:171	2 = ATUIN_HISTORY_ID=01929ec8185b7a8da9923392e8bc6f50
+2024-10-18T10:39:26.578+0200	DEBUG	httpsrv5/main.go:171	3 = ATUIN_SESSION=01929ec808237ec389a36e2fa8aa0c6f
+2024-10-18T10:39:26.578+0200	DEBUG	httpsrv5/main.go:171	4 = COLORTERM=truecolor
+2024-10-18T10:39:26.578+0200	DEBUG	httpsrv5/main.go:171	5 = DBUS_SESSION_BUS_ADDRESS=unix:path=/run/user/1000/bus
+2024-10-18T10:39:26.578+0200	DEBUG	httpsrv5/main.go:171	6 = DEBUGINFOD_URLS=https://debuginfod.archlinux.org 
+2024-10-18T10:39:26.578+0200	DEBUG	httpsrv5/main.go:171	7 = DESKTOP_SESSION=gnome
+2024-10-18T10:39:26.578+0200	DEBUG	httpsrv5/main.go:171	8 = DISPLAY=:0
+2024-10-18T10:39:26.578+0200	DEBUG	httpsrv5/main.go:171	9 = EDITOR=/usr/bin/nano
+2024-10-18T10:39:26.578+0200	DEBUG	httpsrv5/main.go:171	10 = GDMSESSION=gnome
+2024-10-18T10:39:26.578+0200	DEBUG	httpsrv5/main.go:171	11 = GDM_LANG=en_US.UTF-8
+2024-10-18T10:39:26.578+0200	DEBUG	httpsrv5/main.go:171	12 = GNOME_KEYRING_CONTROL=/run/user/1000/keyring
+2024-10-18T10:39:26.578+0200	DEBUG	httpsrv5/main.go:171	13 = GNOME_SETUP_DISPLAY=:1
+2024-10-18T10:39:26.578+0200	DEBUG	httpsrv5/main.go:171	14 = GNOME_TERMINAL_SCREEN=/org/gnome/Terminal/screen/a60fbca9_6d97_4e9a_9327_d6c0ac188a67
+2024-10-18T10:39:26.578+0200	DEBUG	httpsrv5/main.go:171	15 = GNOME_TERMINAL_SERVICE=:1.135
+2024-10-18T10:39:26.578+0200	DEBUG	httpsrv5/main.go:171	16 = HOME=/home/fran
+2024-10-18T10:39:26.578+0200	DEBUG	httpsrv5/main.go:171	17 = LANG=en_US.UTF-8
+2024-10-18T10:39:26.578+0200	DEBUG	httpsrv5/main.go:171	18 = LC_ADDRESS=hr_HR.UTF-8
+2024-10-18T10:39:26.578+0200	DEBUG	httpsrv5/main.go:171	19 = LC_IDENTIFICATION=hr_HR.UTF-8
+2024-10-18T10:39:26.578+0200	DEBUG	httpsrv5/main.go:171	20 = LC_MEASUREMENT=hr_HR.UTF-8
+2024-10-18T10:39:26.578+0200	DEBUG	httpsrv5/main.go:171	21 = LC_MONETARY=hr_HR.UTF-8
+2024-10-18T10:39:26.578+0200	DEBUG	httpsrv5/main.go:171	22 = LC_NAME=hr_HR.UTF-8
+2024-10-18T10:39:26.578+0200	DEBUG	httpsrv5/main.go:171	23 = LC_NUMERIC=hr_HR.UTF-8
+2024-10-18T10:39:26.578+0200	DEBUG	httpsrv5/main.go:171	24 = LC_PAPER=hr_HR.UTF-8
+2024-10-18T10:39:26.578+0200	DEBUG	httpsrv5/main.go:171	25 = LC_TELEPHONE=hr_HR.UTF-8
+2024-10-18T10:39:26.578+0200	DEBUG	httpsrv5/main.go:171	26 = LC_TIME=hr_HR.UTF-8
+2024-10-18T10:39:26.578+0200	DEBUG	httpsrv5/main.go:171	27 = LESS=-R
+2024-10-18T10:39:26.578+0200	DEBUG	httpsrv5/main.go:171	28 = LOGNAME=fran
+2024-10-18T10:39:26.578+0200	DEBUG	httpsrv5/main.go:171	29 = LSCOLORS=Gxfxcxdxbxegedabagacad
+2024-10-18T10:39:26.578+0200	DEBUG	httpsrv5/main.go:171	30 = LS_COLORS=rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=00:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.7z=01;31:*.ace=01;31:*.alz=01;31:*.apk=01;31:*.arc=01;31:*.arj=01;31:*.bz=01;31:*.bz2=01;31:*.cab=01;31:*.cpio=01;31:*.crate=01;31:*.deb=01;31:*.drpm=01;31:*.dwm=01;31:*.dz=01;31:*.ear=01;31:*.egg=01;31:*.esd=01;31:*.gz=01;31:*.jar=01;31:*.lha=01;31:*.lrz=01;31:*.lz=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.lzo=01;31:*.pyz=01;31:*.rar=01;31:*.rpm=01;31:*.rz=01;31:*.sar=01;31:*.swm=01;31:*.t7z=01;31:*.tar=01;31:*.taz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tgz=01;31:*.tlz=01;31:*.txz=01;31:*.tz=01;31:*.tzo=01;31:*.tzst=01;31:*.udeb=01;31:*.war=01;31:*.whl=01;31:*.wim=01;31:*.xz=01;31:*.z=01;31:*.zip=01;31:*.zoo=01;31:*.zst=01;31:*.avif=01;35:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:*~=00;90:*#=00;90:*.bak=00;90:*.crdownload=00;90:*.dpkg-dist=00;90:*.dpkg-new=00;90:*.dpkg-old=00;90:*.dpkg-tmp=00;90:*.old=00;90:*.orig=00;90:*.part=00;90:*.rej=00;90:*.rpmnew=00;90:*.rpmorig=00;90:*.rpmsave=00;90:*.swp=00;90:*.tmp=00;90:*.ucf-dist=00;90:*.ucf-new=00;90:*.ucf-old=00;90:
+2024-10-18T10:39:26.578+0200	DEBUG	httpsrv5/main.go:171	31 = MAIL=/var/spool/mail/fran
+2024-10-18T10:39:26.578+0200	DEBUG	httpsrv5/main.go:171	32 = MASON=/home/fran/.local/share/nvim/mason
+2024-10-18T10:39:26.578+0200	DEBUG	httpsrv5/main.go:171	33 = MEMORY_PRESSURE_WATCH=/sys/fs/cgroup/user.slice/user-1000.slice/user@1000.service/session.slice/org.gnome.SettingsDaemon.MediaKeys.service/memory.pressure
+2024-10-18T10:39:26.578+0200	DEBUG	httpsrv5/main.go:171	34 = MEMORY_PRESSURE_WRITE=c29tZSAyMDAwMDAgMjAwMDAwMAA=
+2024-10-18T10:39:26.578+0200	DEBUG	httpsrv5/main.go:171	35 = MOTD_SHOWN=pam
+2024-10-18T10:39:26.578+0200	DEBUG	httpsrv5/main.go:171	36 = MYVIMRC=/home/fran/.config/nvim/init.lua
+2024-10-18T10:39:26.578+0200	DEBUG	httpsrv5/main.go:171	37 = NVIM=/run/user/1000/nvim.330899.0
+2024-10-18T10:39:26.578+0200	DEBUG	httpsrv5/main.go:171	38 = NVIM_LOG_FILE=/home/fran/.local/state/nvim/log
+2024-10-18T10:39:26.578+0200	DEBUG	httpsrv5/main.go:171	39 = OLDPWD=/home/fran/Documents/posao/httpsrv5
+2024-10-18T10:39:26.578+0200	DEBUG	httpsrv5/main.go:171	40 = PAGER=less
+2024-10-18T10:39:26.578+0200	DEBUG	httpsrv5/main.go:171	41 = PATH=/home/fran/go/bin/:/home/fran/.local/share/nvim/mason/bin:/home/fran/go/bin/:/home/fran/.local/bin:/usr/local/bin:/usr/bin:/usr/local/sbin:/opt/android-sdk/tools:/opt/android-sdk/tools/bin:/usr/lib/jvm/default/bin:/usr/bin/site_perl:/usr/bin/vendor_perl:/usr/bin/core_perl
+2024-10-18T10:39:26.578+0200	DEBUG	httpsrv5/main.go:171	42 = QT_AUTO_SCREEN_SCALE_FACTOR=1
+2024-10-18T10:39:26.578+0200	DEBUG	httpsrv5/main.go:171	43 = QT_IM_MODULE=ibus
+2024-10-18T10:39:26.578+0200	DEBUG	httpsrv5/main.go:171	44 = QT_QPA_PLATFORMTHEME=qt5ct
+2024-10-18T10:39:26.578+0200	DEBUG	httpsrv5/main.go:171	45 = SESSION_MANAGER=local/fran-pc:@/tmp/.ICE-unix/996,unix/fran-pc:/tmp/.ICE-unix/996
+2024-10-18T10:39:26.578+0200	DEBUG	httpsrv5/main.go:171	46 = SHELL=/bin/zsh
+2024-10-18T10:39:26.578+0200	DEBUG	httpsrv5/main.go:171	47 = SHLVL=2
+2024-10-18T10:39:26.578+0200	DEBUG	httpsrv5/main.go:171	48 = SYSTEMD_EXEC_PID=1199
+2024-10-18T10:39:26.578+0200	DEBUG	httpsrv5/main.go:171	49 = TERM=xterm-256color
+2024-10-18T10:39:26.578+0200	DEBUG	httpsrv5/main.go:171	50 = USER=fran
+2024-10-18T10:39:26.578+0200	DEBUG	httpsrv5/main.go:171	51 = USERNAME=fran
+2024-10-18T10:39:26.578+0200	DEBUG	httpsrv5/main.go:171	52 = VTE_VERSION=7604
+2024-10-18T10:39:26.578+0200	DEBUG	httpsrv5/main.go:171	53 = WAYLAND_DISPLAY=wayland-0
+2024-10-18T10:39:26.578+0200	DEBUG	httpsrv5/main.go:171	54 = XAUTHORITY=/run/user/1000/.mutter-Xwaylandauth.QBRHV2
+2024-10-18T10:39:26.578+0200	DEBUG	httpsrv5/main.go:171	55 = XDG_CURRENT_DESKTOP=GNOME
+2024-10-18T10:39:26.578+0200	DEBUG	httpsrv5/main.go:171	56 = XDG_DATA_DIRS=/home/fran/.local/share/flatpak/exports/share:/var/lib/flatpak/exports/share:/usr/local/share/:/usr/share/
+2024-10-18T10:39:26.578+0200	DEBUG	httpsrv5/main.go:171	57 = XDG_MENU_PREFIX=gnome-
+2024-10-18T10:39:26.578+0200	DEBUG	httpsrv5/main.go:171	58 = XDG_RUNTIME_DIR=/run/user/1000
+2024-10-18T10:39:26.578+0200	DEBUG	httpsrv5/main.go:171	59 = XDG_SESSION_CLASS=user
+2024-10-18T10:39:26.578+0200	DEBUG	httpsrv5/main.go:171	60 = XDG_SESSION_DESKTOP=gnome
+2024-10-18T10:39:26.578+0200	DEBUG	httpsrv5/main.go:171	61 = XDG_SESSION_TYPE=wayland
+2024-10-18T10:39:26.578+0200	DEBUG	httpsrv5/main.go:171	62 = XMODIFIERS=@im=ibus
+2024-10-18T10:39:26.578+0200	DEBUG	httpsrv5/main.go:171	63 = ZSH=/usr/share/oh-my-zsh/
+2024-10-18T10:39:26.578+0200	DEBUG	httpsrv5/main.go:171	64 = _=/home/fran/go/bin//task
+2024-10-18T10:39:26.578+0200	DEBUG	httpsrv5/main.go:171	65 = PWD=/home/fran/Documents/posao/httpsrv5
+2024-10-18T10:39:26.578+0200	DEBUG	httpsrv5/main.go:175	Platform = linux
+2024-10-18T10:39:26.578+0200	DEBUG	httpsrv5/main.go:176	Go version = go1.23.1
+2024-10-18T10:39:26.578+0200	DEBUG	httpsrv5/main.go:179	Command line = [./bin/generic]
+2024-10-18T10:39:26.578+0200	DEBUG	httpsrv5/main.go:185	Program configuration = {CountryCode:hr Port:6666 ClientTimeout:3}
+2024-10-18T10:39:26.578+0200	DEBUG	config/config.go:61	Country is supported, code = hr
+2024-10-18T10:39:26.579+0200	DEBUG	config/config.go:73	Port = 6666
+2024-10-18T10:39:26.579+0200	DEBUG	config/config.go:75	Program configuration = {CountryCode:hr Port:6666 ClientTimeout:3}
+2024-10-18T10:39:26.579+0200	DEBUG	scheduler/scheduler.go:40	Created scheduler context
+2024-10-18T10:39:26.579+0200	DEBUG	scheduler/scheduler.go:45	Started CheckInterrupt
+2024-10-18T10:39:26.579+0200	DEBUG	scheduler/scheduler.go:50	Started HTTP server
+2024-10-18T10:39:26.579+0200	DEBUG	httpserver/httpserver.go:62	Started HTTP listen, address = :6666
+2024-10-18T10:39:42.073+0200	DEBUG	data/getData.go:41	Client request = &{Method:POST URL:/getData Proto:HTTP/1.1 ProtoMajor:1 ProtoMinor:1 Header:map[Accept:[application/json] Content-Length:[89] Content-Type:[application/json] User-Agent:[rest.nvim v3.8.3]] Body:0xc000130040 GetBody:<nil> ContentLength:89 TransferEncoding:[] Close:false Host:127.0.0.1:6666 Form:map[] PostForm:map[] MultipartForm:<nil> Trailer:map[] RemoteAddr:127.0.0.1:55424 RequestURI:/getData TLS:<nil> Cancel:<nil> Response:<nil> Pattern: ctx:0xc00012a0a0 pat:<nil> matches:[] otherValues:map[]}
+2024-10-18T10:39:42.073+0200	DEBUG	data/getData.go:66	Client request = {Id:invoice-hr-1 Type:.xml Payload:{Date: StatusCode:0}}
+2024-10-18T10:39:42.073+0200	DEBUG	httpio/response.go:82	Response to client, http status = 200, response = {StatusCode:0 Status:no error StatusExt: TimeStamp:2024-10-18T10:39:42.073935899+02:00 Payload:{Data:[{Id:0 Num:111 WorkDate:2023-01-01 Amount:0}]}}
+2024-10-18T10:39:49.838+0200	DEBUG	upload/uploadFile.go:29	Client request = &{Method:POST URL:/uploadFile Proto:HTTP/1.1 ProtoMajor:1 ProtoMinor:1 Header:map[Accept:[*/*] Content-Length:[0] Content-Type:[image/png] Upload-File-Name:[1.png] User-Agent:[rest.nvim v3.8.3]] Body:{} GetBody:<nil> ContentLength:0 TransferEncoding:[] Close:false Host:127.0.0.1:6666 Form:map[] PostForm:map[] MultipartForm:<nil> Trailer:map[] RemoteAddr:127.0.0.1:40300 RequestURI:/uploadFile TLS:<nil> Cancel:<nil> Response:<nil> Pattern: ctx:0xc0001aa050 pat:<nil> matches:[] otherValues:map[]}
+2024-10-18T10:39:49.838+0200	DEBUG	upload/uploadFile.go:30	Upload file name = 1.png
+2024-10-18T10:39:49.838+0200	DEBUG	upload/uploadFile.go:50	Temp file name = ./tmp/part827925129
+2024-10-18T10:39:49.838+0200	DEBUG	upload/uploadFile.go:63	Number of bytes written = 0
+2024-10-18T10:39:49.838+0200	DEBUG	upload/uploadFile.go:89	Upload file path = ./upload/1.png
+2024-10-18T10:39:49.838+0200	DEBUG	upload/uploadFile.go:99	Renamed temp file to ./upload/1.png
+2024-10-18T10:39:49.838+0200	DEBUG	httpio/response.go:82	Response to client, http status = 200, response = {StatusCode:0 Status:no error StatusExt: TimeStamp:2024-10-18T10:39:49.838432128+02:00 Payload:{FileName:./upload/1.png}}
+2024-10-18T10:40:10.162+0200	DEBUG	mgmt/getServerStatistics.go:23	Client request = &{Method:GET URL:/getServerStatistics Proto:HTTP/1.1 ProtoMajor:1 ProtoMinor:1 Header:map[Accept:[application/json] User-Agent:[rest.nvim v3.8.3]] Body:{} GetBody:<nil> ContentLength:0 TransferEncoding:[] Close:false Host:127.0.0.1:6666 Form:map[] PostForm:map[] MultipartForm:<nil> Trailer:map[] RemoteAddr:127.0.0.1:46216 RequestURI:/getServerStatistics TLS:<nil> Cancel:<nil> Response:<nil> Pattern: ctx:0xc00012a1e0 pat:<nil> matches:[] otherValues:map[]}
+2024-10-18T10:40:10.162+0200	DEBUG	httpio/response.go:82	Response to client, http status = 200, response = {StatusCode:0 Status:no error StatusExt: TimeStamp:2024-10-18T10:40:10.162507552+02:00 Payload:{RequestCount:3 ResponseCount:2}}
+2024-10-18T10:59:05.363+0200	DEBUG	mgmt/getServerVersion.go:27	Client request = &{Method:GET URL:/getServerVersion Proto:HTTP/1.1 ProtoMajor:1 ProtoMinor:1 Header:map[Accept:[application/json] User-Agent:[rest.nvim v3.8.3]] Body:{} GetBody:<nil> ContentLength:0 TransferEncoding:[] Close:false Host:127.0.0.1:6666 Form:map[] PostForm:map[] MultipartForm:<nil> Trailer:map[] RemoteAddr:127.0.0.1:40862 RequestURI:/getServerVersion TLS:<nil> Cancel:<nil> Response:<nil> Pattern: ctx:0xc00012a370 pat:<nil> matches:[] otherValues:map[]}
+2024-10-18T10:59:05.363+0200	DEBUG	httpio/response.go:82	Response to client, http status = 200, response = {StatusCode:0 Status:no error StatusExt: TimeStamp:2024-10-18T10:59:05.363548242+02:00 Payload:{ProgramName:httpsrv ProgramVersion:0.0.1 Copyright:Copyright (c) 20xx POINTER d.o.o. All rights reserved. ManufacturerName:POINTER SerialNumber:124567890}}
+2024-10-18T11:04:29.703+0200	DEBUG	upload/uploadFile.go:29	Client request = &{Method:POST URL:/uploadFile Proto:HTTP/1.1 ProtoMajor:1 ProtoMinor:1 Header:map[Accept:[*/*] Content-Length:[0] Content-Type:[image/png] Upload-File-Name:[1.png] User-Agent:[rest.nvim v3.8.3]] Body:{} GetBody:<nil> ContentLength:0 TransferEncoding:[] Close:false Host:127.0.0.1:6666 Form:map[] PostForm:map[] MultipartForm:<nil> Trailer:map[] RemoteAddr:127.0.0.1:36278 RequestURI:/uploadFile TLS:<nil> Cancel:<nil> Response:<nil> Pattern: ctx:0xc00012a550 pat:<nil> matches:[] otherValues:map[]}
+2024-10-18T11:04:29.703+0200	DEBUG	upload/uploadFile.go:30	Upload file name = 1.png
+2024-10-18T11:04:29.704+0200	DEBUG	upload/uploadFile.go:50	Temp file name = ./tmp/part3722003574
+2024-10-18T11:04:29.704+0200	DEBUG	upload/uploadFile.go:63	Number of bytes written = 0
+2024-10-18T11:04:29.704+0200	DEBUG	upload/uploadFile.go:89	Upload file path = ./upload/1.png
+2024-10-18T11:04:29.704+0200	DEBUG	upload/uploadFile.go:99	Renamed temp file to ./upload/1.png
+2024-10-18T11:04:29.704+0200	DEBUG	httpio/response.go:82	Response to client, http status = 200, response = {StatusCode:0 Status:no error StatusExt: TimeStamp:2024-10-18T11:04:29.704129778+02:00 Payload:{FileName:./upload/1.png}}
+2024-10-18T12:05:48.252+0200	DEBUG	httpsrv5/main.go:154	httpsrv 0.0.1
+2024-10-18T12:05:48.252+0200	DEBUG	httpsrv5/main.go:155	Copyright (c) 20xx POINTER d.o.o. All rights reserved.
+2024-10-18T12:05:48.252+0200	DEBUG	httpsrv5/main.go:159	Host name = fran-pc
+2024-10-18T12:05:48.252+0200	DEBUG	httpsrv5/main.go:162	Current folder = /home/fran/Documents/posao/httpsrv5
+2024-10-18T12:05:48.252+0200	DEBUG	httpsrv5/main.go:167	Process id = 353101
+2024-10-18T12:05:48.252+0200	DEBUG	httpsrv5/main.go:171	0 = ANDROID_HOME=/opt/android-sdk
+2024-10-18T12:05:48.252+0200	DEBUG	httpsrv5/main.go:171	1 = ANDROID_SDK_ROOT=/opt/android-sdk
+2024-10-18T12:05:48.252+0200	DEBUG	httpsrv5/main.go:171	2 = ATUIN_HISTORY_ID=01929f1729447e97b85e52d0d20bec16
+2024-10-18T12:05:48.252+0200	DEBUG	httpsrv5/main.go:171	3 = ATUIN_SESSION=01929f1717ae73c2b5674c4be87726a7
+2024-10-18T12:05:48.252+0200	DEBUG	httpsrv5/main.go:171	4 = COLORTERM=truecolor
+2024-10-18T12:05:48.252+0200	DEBUG	httpsrv5/main.go:171	5 = DBUS_SESSION_BUS_ADDRESS=unix:path=/run/user/1000/bus
+2024-10-18T12:05:48.252+0200	DEBUG	httpsrv5/main.go:171	6 = DEBUGINFOD_URLS=https://debuginfod.archlinux.org 
+2024-10-18T12:05:48.252+0200	DEBUG	httpsrv5/main.go:171	7 = DESKTOP_SESSION=gnome
+2024-10-18T12:05:48.252+0200	DEBUG	httpsrv5/main.go:171	8 = DISPLAY=:0
+2024-10-18T12:05:48.252+0200	DEBUG	httpsrv5/main.go:171	9 = EDITOR=/usr/bin/nano
+2024-10-18T12:05:48.252+0200	DEBUG	httpsrv5/main.go:171	10 = GDMSESSION=gnome
+2024-10-18T12:05:48.252+0200	DEBUG	httpsrv5/main.go:171	11 = GDM_LANG=en_US.UTF-8
+2024-10-18T12:05:48.252+0200	DEBUG	httpsrv5/main.go:171	12 = GNOME_KEYRING_CONTROL=/run/user/1000/keyring
+2024-10-18T12:05:48.252+0200	DEBUG	httpsrv5/main.go:171	13 = GNOME_SETUP_DISPLAY=:1
+2024-10-18T12:05:48.252+0200	DEBUG	httpsrv5/main.go:171	14 = GNOME_TERMINAL_SCREEN=/org/gnome/Terminal/screen/a60fbca9_6d97_4e9a_9327_d6c0ac188a67
+2024-10-18T12:05:48.252+0200	DEBUG	httpsrv5/main.go:171	15 = GNOME_TERMINAL_SERVICE=:1.135
+2024-10-18T12:05:48.252+0200	DEBUG	httpsrv5/main.go:171	16 = HOME=/home/fran
+2024-10-18T12:05:48.252+0200	DEBUG	httpsrv5/main.go:171	17 = LANG=en_US.UTF-8
+2024-10-18T12:05:48.252+0200	DEBUG	httpsrv5/main.go:171	18 = LC_ADDRESS=hr_HR.UTF-8
+2024-10-18T12:05:48.252+0200	DEBUG	httpsrv5/main.go:171	19 = LC_IDENTIFICATION=hr_HR.UTF-8
+2024-10-18T12:05:48.252+0200	DEBUG	httpsrv5/main.go:171	20 = LC_MEASUREMENT=hr_HR.UTF-8
+2024-10-18T12:05:48.252+0200	DEBUG	httpsrv5/main.go:171	21 = LC_MONETARY=hr_HR.UTF-8
+2024-10-18T12:05:48.252+0200	DEBUG	httpsrv5/main.go:171	22 = LC_NAME=hr_HR.UTF-8
+2024-10-18T12:05:48.252+0200	DEBUG	httpsrv5/main.go:171	23 = LC_NUMERIC=hr_HR.UTF-8
+2024-10-18T12:05:48.252+0200	DEBUG	httpsrv5/main.go:171	24 = LC_PAPER=hr_HR.UTF-8
+2024-10-18T12:05:48.252+0200	DEBUG	httpsrv5/main.go:171	25 = LC_TELEPHONE=hr_HR.UTF-8
+2024-10-18T12:05:48.252+0200	DEBUG	httpsrv5/main.go:171	26 = LC_TIME=hr_HR.UTF-8
+2024-10-18T12:05:48.252+0200	DEBUG	httpsrv5/main.go:171	27 = LESS=-R
+2024-10-18T12:05:48.252+0200	DEBUG	httpsrv5/main.go:171	28 = LOGNAME=fran
+2024-10-18T12:05:48.252+0200	DEBUG	httpsrv5/main.go:171	29 = LSCOLORS=Gxfxcxdxbxegedabagacad
+2024-10-18T12:05:48.252+0200	DEBUG	httpsrv5/main.go:171	30 = LS_COLORS=rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=00:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.7z=01;31:*.ace=01;31:*.alz=01;31:*.apk=01;31:*.arc=01;31:*.arj=01;31:*.bz=01;31:*.bz2=01;31:*.cab=01;31:*.cpio=01;31:*.crate=01;31:*.deb=01;31:*.drpm=01;31:*.dwm=01;31:*.dz=01;31:*.ear=01;31:*.egg=01;31:*.esd=01;31:*.gz=01;31:*.jar=01;31:*.lha=01;31:*.lrz=01;31:*.lz=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.lzo=01;31:*.pyz=01;31:*.rar=01;31:*.rpm=01;31:*.rz=01;31:*.sar=01;31:*.swm=01;31:*.t7z=01;31:*.tar=01;31:*.taz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tgz=01;31:*.tlz=01;31:*.txz=01;31:*.tz=01;31:*.tzo=01;31:*.tzst=01;31:*.udeb=01;31:*.war=01;31:*.whl=01;31:*.wim=01;31:*.xz=01;31:*.z=01;31:*.zip=01;31:*.zoo=01;31:*.zst=01;31:*.avif=01;35:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:*~=00;90:*#=00;90:*.bak=00;90:*.crdownload=00;90:*.dpkg-dist=00;90:*.dpkg-new=00;90:*.dpkg-old=00;90:*.dpkg-tmp=00;90:*.old=00;90:*.orig=00;90:*.part=00;90:*.rej=00;90:*.rpmnew=00;90:*.rpmorig=00;90:*.rpmsave=00;90:*.swp=00;90:*.tmp=00;90:*.ucf-dist=00;90:*.ucf-new=00;90:*.ucf-old=00;90:
+2024-10-18T12:05:48.252+0200	DEBUG	httpsrv5/main.go:171	31 = MAIL=/var/spool/mail/fran
+2024-10-18T12:05:48.252+0200	DEBUG	httpsrv5/main.go:171	32 = MASON=/home/fran/.local/share/nvim/mason
+2024-10-18T12:05:48.252+0200	DEBUG	httpsrv5/main.go:171	33 = MEMORY_PRESSURE_WATCH=/sys/fs/cgroup/user.slice/user-1000.slice/user@1000.service/session.slice/org.gnome.SettingsDaemon.MediaKeys.service/memory.pressure
+2024-10-18T12:05:48.252+0200	DEBUG	httpsrv5/main.go:171	34 = MEMORY_PRESSURE_WRITE=c29tZSAyMDAwMDAgMjAwMDAwMAA=
+2024-10-18T12:05:48.252+0200	DEBUG	httpsrv5/main.go:171	35 = MOTD_SHOWN=pam
+2024-10-18T12:05:48.252+0200	DEBUG	httpsrv5/main.go:171	36 = MYVIMRC=/home/fran/.config/nvim/init.lua
+2024-10-18T12:05:48.252+0200	DEBUG	httpsrv5/main.go:171	37 = NVIM=/run/user/1000/nvim.352283.0
+2024-10-18T12:05:48.252+0200	DEBUG	httpsrv5/main.go:171	38 = NVIM_LOG_FILE=/home/fran/.local/state/nvim/log
+2024-10-18T12:05:48.252+0200	DEBUG	httpsrv5/main.go:171	39 = OLDPWD=/home/fran/Documents/posao/httpsrv5
+2024-10-18T12:05:48.252+0200	DEBUG	httpsrv5/main.go:171	40 = PAGER=less
+2024-10-18T12:05:48.252+0200	DEBUG	httpsrv5/main.go:171	41 = PATH=/home/fran/go/bin/:/home/fran/.local/share/nvim/mason/bin:/home/fran/go/bin/:/home/fran/.local/bin:/usr/local/bin:/usr/bin:/usr/local/sbin:/opt/android-sdk/tools:/opt/android-sdk/tools/bin:/usr/lib/jvm/default/bin:/usr/bin/site_perl:/usr/bin/vendor_perl:/usr/bin/core_perl
+2024-10-18T12:05:48.252+0200	DEBUG	httpsrv5/main.go:171	42 = QT_AUTO_SCREEN_SCALE_FACTOR=1
+2024-10-18T12:05:48.252+0200	DEBUG	httpsrv5/main.go:171	43 = QT_IM_MODULE=ibus
+2024-10-18T12:05:48.252+0200	DEBUG	httpsrv5/main.go:171	44 = QT_QPA_PLATFORMTHEME=qt5ct
+2024-10-18T12:05:48.252+0200	DEBUG	httpsrv5/main.go:171	45 = SESSION_MANAGER=local/fran-pc:@/tmp/.ICE-unix/996,unix/fran-pc:/tmp/.ICE-unix/996
+2024-10-18T12:05:48.252+0200	DEBUG	httpsrv5/main.go:171	46 = SHELL=/bin/zsh
+2024-10-18T12:05:48.252+0200	DEBUG	httpsrv5/main.go:171	47 = SHLVL=2
+2024-10-18T12:05:48.252+0200	DEBUG	httpsrv5/main.go:171	48 = SYSTEMD_EXEC_PID=1199
+2024-10-18T12:05:48.252+0200	DEBUG	httpsrv5/main.go:171	49 = TERM=xterm-256color
+2024-10-18T12:05:48.252+0200	DEBUG	httpsrv5/main.go:171	50 = USER=fran
+2024-10-18T12:05:48.252+0200	DEBUG	httpsrv5/main.go:171	51 = USERNAME=fran
+2024-10-18T12:05:48.252+0200	DEBUG	httpsrv5/main.go:171	52 = VTE_VERSION=7604
+2024-10-18T12:05:48.252+0200	DEBUG	httpsrv5/main.go:171	53 = WAYLAND_DISPLAY=wayland-0
+2024-10-18T12:05:48.252+0200	DEBUG	httpsrv5/main.go:171	54 = XAUTHORITY=/run/user/1000/.mutter-Xwaylandauth.QBRHV2
+2024-10-18T12:05:48.252+0200	DEBUG	httpsrv5/main.go:171	55 = XDG_CURRENT_DESKTOP=GNOME
+2024-10-18T12:05:48.252+0200	DEBUG	httpsrv5/main.go:171	56 = XDG_DATA_DIRS=/home/fran/.local/share/flatpak/exports/share:/var/lib/flatpak/exports/share:/usr/local/share/:/usr/share/
+2024-10-18T12:05:48.252+0200	DEBUG	httpsrv5/main.go:171	57 = XDG_MENU_PREFIX=gnome-
+2024-10-18T12:05:48.252+0200	DEBUG	httpsrv5/main.go:171	58 = XDG_RUNTIME_DIR=/run/user/1000
+2024-10-18T12:05:48.252+0200	DEBUG	httpsrv5/main.go:171	59 = XDG_SESSION_CLASS=user
+2024-10-18T12:05:48.252+0200	DEBUG	httpsrv5/main.go:171	60 = XDG_SESSION_DESKTOP=gnome
+2024-10-18T12:05:48.252+0200	DEBUG	httpsrv5/main.go:171	61 = XDG_SESSION_TYPE=wayland
+2024-10-18T12:05:48.252+0200	DEBUG	httpsrv5/main.go:171	62 = XMODIFIERS=@im=ibus
+2024-10-18T12:05:48.253+0200	DEBUG	httpsrv5/main.go:171	63 = ZSH=/usr/share/oh-my-zsh/
+2024-10-18T12:05:48.253+0200	DEBUG	httpsrv5/main.go:171	64 = _=/home/fran/go/bin//task
+2024-10-18T12:05:48.253+0200	DEBUG	httpsrv5/main.go:171	65 = PWD=/home/fran/Documents/posao/httpsrv5
+2024-10-18T12:05:48.253+0200	DEBUG	httpsrv5/main.go:175	Platform = linux
+2024-10-18T12:05:48.253+0200	DEBUG	httpsrv5/main.go:176	Go version = go1.23.1
+2024-10-18T12:05:48.253+0200	DEBUG	httpsrv5/main.go:179	Command line = [./bin/generic]
+2024-10-18T12:05:48.253+0200	DEBUG	httpsrv5/main.go:185	Program configuration = {CountryCode:hr Port:6666 ClientTimeout:3}
+2024-10-18T12:05:48.253+0200	DEBUG	config/config.go:61	Country is supported, code = hr
+2024-10-18T12:05:48.253+0200	DEBUG	config/config.go:73	Port = 6666
+2024-10-18T12:05:48.253+0200	DEBUG	config/config.go:75	Program configuration = {CountryCode:hr Port:6666 ClientTimeout:3}
+2024-10-18T12:05:48.253+0200	DEBUG	scheduler/scheduler.go:40	Created scheduler context
+2024-10-18T12:05:48.253+0200	DEBUG	scheduler/scheduler.go:45	Started CheckInterrupt
+2024-10-18T12:05:48.253+0200	DEBUG	scheduler/scheduler.go:50	Started HTTP server
+2024-10-18T12:05:48.253+0200	DEBUG	httpserver/httpserver.go:62	Started HTTP listen, address = :6666
+2024-10-18T12:05:53.036+0200	DEBUG	data/getData.go:41	Client request = &{Method:POST URL:/getData Proto:HTTP/1.1 ProtoMajor:1 ProtoMinor:1 Header:map[Accept:[application/json] Content-Length:[139] Content-Type:[application/json] User-Agent:[rest.nvim v3.8.3]] Body:0xc0001181c0 GetBody:<nil> ContentLength:139 TransferEncoding:[] Close:false Host:127.0.0.1:6666 Form:map[] PostForm:map[] MultipartForm:<nil> Trailer:map[] RemoteAddr:127.0.0.1:57362 RequestURI:/getData TLS:<nil> Cancel:<nil> Response:<nil> Pattern: ctx:0xc000114190 pat:<nil> matches:[] otherValues:map[]}
+2024-10-18T12:05:53.036+0200	DEBUG	data/getData.go:66	Client request = {Id:id-1234567890 Type:data Payload:{Date:S1234/1-1 StatusCode:0}}
+2024-10-18T12:05:53.036+0200	DEBUG	httpio/response.go:82	Response to client, http status = 200, response = {StatusCode:0 Status:no error StatusExt: TimeStamp:2024-10-18T12:05:53.036896409+02:00 Payload:{Data:[{Id:0 Num:111 WorkDate:2023-01-01 Amount:0}]}}
+2024-10-18T13:18:24.484+0200	DEBUG	mgmt/getServerStatistics.go:23	Client request = &{Method:GET URL:/getServerStatistics Proto:HTTP/1.1 ProtoMajor:1 ProtoMinor:1 Header:map[Accept:[application/json] User-Agent:[rest.nvim v3.8.3]] Body:{} GetBody:<nil> ContentLength:0 TransferEncoding:[] Close:false Host:127.0.0.1:6666 Form:map[] PostForm:map[] MultipartForm:<nil> Trailer:map[] RemoteAddr:127.0.0.1:56658 RequestURI:/getServerStatistics TLS:<nil> Cancel:<nil> Response:<nil> Pattern: ctx:0xc00009e0a0 pat:<nil> matches:[] otherValues:map[]}
+2024-10-18T13:18:24.484+0200	DEBUG	httpio/response.go:82	Response to client, http status = 200, response = {StatusCode:0 Status:no error StatusExt: TimeStamp:2024-10-18T13:18:24.484968352+02:00 Payload:{RequestCount:2 ResponseCount:1}}
