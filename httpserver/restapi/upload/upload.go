@@ -1,9 +1,11 @@
 package upload
 
 import (
+	"errors"
 	"fmt"
 	"iis_server/config"
 	"iis_server/httpserver/httpio"
+	"iis_server/xmlvalidator"
 	"io"
 	"net/http"
 	"os"
@@ -23,6 +25,22 @@ func HandleUploadFile(w http.ResponseWriter, r *http.Request, ps httprouter.Para
 		zap.S().Errorf("Can't read file from form err = %s", err)
 		httpio.WriteStandardHTTPResponse(w, http.StatusInternalServerError, nil, err)
 	}
+	data := make([]byte, header.Size)
+	file.Read(data)
+	defer file.Close()
+
+	if err := xmlvalidator.Validate(data, method); err != nil {
+		var invalidXmlErr *xmlvalidator.ErrInvalidXML
+		if errors.As(err, &invalidXmlErr) {
+			zap.S().Infof("Invalid xml err = %v", invalidXmlErr)
+			// TODO: return info on where is the invalid xml
+			httpio.WriteStandardHTTPResponse(w, http.StatusOK, invalidXmlErr.Reason, nil)
+		} else {
+			zap.S().Errorf("Cannot Validate xml, err = %v", err)
+			httpio.WriteStandardHTTPResponse(w, http.StatusInternalServerError, nil, err)
+		}
+		return
+	}
 
 	tempFile, err := os.CreateTemp(config.TMP_FOLDER, "part*")
 	if err != nil {
@@ -31,16 +49,13 @@ func HandleUploadFile(w http.ResponseWriter, r *http.Request, ps httprouter.Para
 		return
 	}
 
-	// get temp file name
 	tempName := tempFile.Name()
 	zap.S().Infof("Temp file name = %v", tempName)
 	defer tempFile.Close()
 
-	// copy to temp file
 	n, err := io.Copy(tempFile, file)
 	if err != nil {
 		zap.S().Errorf("Cannot copy content to temp file, err = %v", err)
-
 		// write response
 		httpio.WriteStandardHTTPResponse(w, http.StatusInternalServerError, nil, err)
 		return
@@ -55,7 +70,6 @@ func HandleUploadFile(w http.ResponseWriter, r *http.Request, ps httprouter.Para
 	err = os.Rename(tempName, filePath)
 	if err != nil {
 		zap.S().Errorf("Cannot rename temp file, err = %v", err)
-
 		// write response
 		httpio.WriteStandardHTTPResponse(w, http.StatusInternalServerError, nil, err)
 		return

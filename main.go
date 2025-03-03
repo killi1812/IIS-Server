@@ -22,6 +22,7 @@ func main() {
 func setup() error {
 	_ = os.Mkdir(config.UPLOAD_FOLDER, 0755)
 	_ = os.Mkdir(config.TMP_FOLDER, 0755)
+	_ = os.Mkdir(config.XML_SCHEMAS_FOLDER, 0755)
 
 	logger, err := zap.NewDevelopment()
 	if err != nil {
