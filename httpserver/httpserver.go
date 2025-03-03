@@ -7,6 +7,7 @@ import (
 	"sync"
 	"time"
 
+	"github.com/julienschmidt/httprouter"
 	"go.uber.org/zap"
 )
 
@@ -15,13 +16,13 @@ const port = ":5555"
 func Start(ctx context.Context, wg *sync.WaitGroup, schedulerCancel context.CancelFunc) {
 	defer wg.Done()
 
-	mux := http.NewServeMux()
-	setupHandlers(mux, schedulerCancel)
+	router := httprouter.New()
+	setupHandlers(router, schedulerCancel)
 
 	// setup server
 	srv := &http.Server{
 		Addr:         port,
-		Handler:      mux,
+		Handler:      router,
 		ReadTimeout:  10 * time.Second,
 		WriteTimeout: 10 * time.Second,
 		IdleTimeout:  10 * time.Second,
@@ -35,7 +36,7 @@ func Start(ctx context.Context, wg *sync.WaitGroup, schedulerCancel context.Canc
 			zap.S().Errorf("Cannot start HTTP server, err = %v", err)
 		}
 	}()
-	zap.S().Debugf("Started HTTP listen, address = http://localhost%v", srv.Addr)
+	zap.S().Infof("Started HTTP listen, address = http://localhost%v", srv.Addr)
 
 	// wait for context cancellation
 	<-ctx.Done()
@@ -47,10 +48,10 @@ func Start(ctx context.Context, wg *sync.WaitGroup, schedulerCancel context.Canc
 	if err != nil {
 		zap.S().Errorf("Cannot shut down HTTP server, err = %v", err)
 	}
-	zap.S().Debugf("HTTP server was shut down")
+	zap.S().Info("HTTP server was shut down")
 }
 
-func setupHandlers(mux *http.ServeMux, schedulerCancel context.CancelFunc) {
+func setupHandlers(router *httprouter.Router, schedulerCancel context.CancelFunc) {
 	/*
 		// server management
 		getServerStatus := http.HandlerFunc(mgmt.GetServerStatus)
@@ -75,7 +76,8 @@ func setupHandlers(mux *http.ServeMux, schedulerCancel context.CancelFunc) {
 		getData := http.HandlerFunc(data.GetData)
 		mux.HandleFunc("/getData", getData)
 	*/
-	mux.HandleFunc("/", func(w http.ResponseWriter, r *http.Request) {
+
+	router.GET("/", func(w http.ResponseWriter, r *http.Request, ps httprouter.Params) {
 		w.Write([]byte("Hello"))
 	})
 }
