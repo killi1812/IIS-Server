@@ -12,6 +12,7 @@ import (
 	"strings"
 
 	"github.com/julienschmidt/httprouter"
+	"github.com/lestrrat-go/libxml2/xsd"
 	"go.uber.org/zap"
 )
 
@@ -30,8 +31,16 @@ func HandleUploadFile(w http.ResponseWriter, r *http.Request, ps httprouter.Para
 	defer file.Close()
 
 	if err := xmlvalidator.Validate(data, method); err != nil {
+		var validationErr xsd.SchemaValidationError
 		var invalidXmlErr *xmlvalidator.ErrInvalidXML
-		if errors.As(err, &invalidXmlErr) {
+		if errors.As(err, &validationErr) {
+			zap.S().Infof("errs: %+v\n", validationErr.Errors())
+			valErrs := []string{}
+			for _, err2 := range validationErr.Errors() {
+				valErrs = append(valErrs, err2.Error())
+			}
+			httpio.WriteStandardHTTPResponse(w, http.StatusOK, valErrs, nil)
+		} else if errors.As(err, &invalidXmlErr) {
 			zap.S().Infof("Invalid xml err = %v", invalidXmlErr)
 			// TODO: return info on where is the invalid xml
 			httpio.WriteStandardHTTPResponse(w, http.StatusOK, invalidXmlErr.Reason, nil)

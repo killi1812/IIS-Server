@@ -1,7 +1,6 @@
 package xmlvalidator
 
 import (
-	"errors"
 	"fmt"
 	"os"
 
@@ -63,10 +62,7 @@ func validateXsd(data []byte) error {
 	// Validate XML against XSD
 	if err := schema.Validate(doc); err != nil {
 		// TODO: check how to unwrap errors
-		var errs xsd.SchemaValidationError
-		if errors.Is(err, errs) {
-			fmt.Printf("errs: %+v\n", errs.Errors())
-		}
+
 		fmt.Printf("%T\n", err)
 		return err
 	}
