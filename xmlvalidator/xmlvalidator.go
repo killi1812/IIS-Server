@@ -44,26 +44,22 @@ func validateXsd(data []byte) error {
 	if err != nil {
 		return fmt.Errorf("error reading XSD file: %v", err)
 	}
-
+	// NOTE: writes a nice output to console but doen't have great error returns
 	schema, err := xsd.Parse(schemaData)
 	if err != nil {
 		return fmt.Errorf("error parsing XSD: %v", err)
 	}
-	defer schema.Free() // Free memory after validation
+	defer schema.Free()
 
-	// Parse XML document
 	doc, err := libxml2.Parse(data)
 	if err != nil {
-		fmt.Printf("error parsing XML: %v", err)
+		fmt.Printf("error parsing XML: %v\nType:%T\n", err, err)
 		return &ErrInvalidXML{Reason: err.Error()}
 	}
 	defer doc.Free() // Free memory
 
 	// Validate XML against XSD
 	if err := schema.Validate(doc); err != nil {
-		// TODO: check how to unwrap errors
-
-		fmt.Printf("%T\n", err)
 		return err
 	}
 

@@ -16,6 +16,7 @@ import (
 	"go.uber.org/zap"
 )
 
+// TODO: Simplify function mby no need tmp file
 func HandleUploadFile(w http.ResponseWriter, r *http.Request, ps httprouter.Params) {
 	parts := strings.Split(r.URL.Path, "/")
 	method := parts[len(parts)-1]
@@ -33,18 +34,21 @@ func HandleUploadFile(w http.ResponseWriter, r *http.Request, ps httprouter.Para
 	if err := xmlvalidator.Validate(data, method); err != nil {
 		var validationErr xsd.SchemaValidationError
 		var invalidXmlErr *xmlvalidator.ErrInvalidXML
-		if errors.As(err, &validationErr) {
+		valErrs := []string{}
+		switch {
+		case errors.As(err, &validationErr):
 			zap.S().Infof("errs: %+v\n", validationErr.Errors())
-			valErrs := []string{}
 			for _, err2 := range validationErr.Errors() {
 				valErrs = append(valErrs, err2.Error())
 			}
 			httpio.WriteStandardHTTPResponse(w, http.StatusOK, valErrs, nil)
-		} else if errors.As(err, &invalidXmlErr) {
+
+		case errors.As(err, &invalidXmlErr):
 			zap.S().Infof("Invalid xml err = %v", invalidXmlErr)
 			// TODO: return info on where is the invalid xml
-			httpio.WriteStandardHTTPResponse(w, http.StatusOK, invalidXmlErr.Reason, nil)
-		} else {
+			httpio.WriteStandardHTTPResponse(w, http.StatusOK, invalidXmlErr.Error(), nil)
+
+		default:
 			zap.S().Errorf("Cannot Validate xml, err = %v", err)
 			httpio.WriteStandardHTTPResponse(w, http.StatusInternalServerError, nil, err)
 		}
