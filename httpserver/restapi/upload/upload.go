@@ -12,7 +12,7 @@ import (
 	"strings"
 
 	"github.com/julienschmidt/httprouter"
-	"github.com/lestrrat-go/libxml2/xsd"
+	"github.com/killi1812/libxml2/types"
 	"go.uber.org/zap"
 )
 
@@ -32,13 +32,13 @@ func HandleUploadFile(w http.ResponseWriter, r *http.Request, ps httprouter.Para
 	defer file.Close()
 
 	if err := xmlvalidator.Validate(data, method); err != nil {
-		var validationErr xsd.SchemaValidationError
+		var validationErr types.SchemaValidationError
 		var invalidXmlErr *xmlvalidator.ErrInvalidXML
 		valErrs := []string{}
 		switch {
 		case errors.As(err, &validationErr):
-			zap.S().Infof("errs: %+v\n", validationErr.Errors())
-			for _, err2 := range validationErr.Errors() {
+			zap.S().Infof("errs: %+v\n", validationErr.Errors)
+			for _, err2 := range validationErr.Errors {
 				valErrs = append(valErrs, err2.Error())
 			}
 			httpio.WriteStandardHTTPResponse(w, http.StatusOK, valErrs, nil)

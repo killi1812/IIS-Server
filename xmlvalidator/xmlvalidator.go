@@ -1,11 +1,13 @@
 package xmlvalidator
 
 import (
+	"errors"
 	"fmt"
-	"os"
 
-	"github.com/lestrrat-go/libxml2"
-	"github.com/lestrrat-go/libxml2/xsd"
+	"github.com/killi1812/libxml2"
+	"github.com/killi1812/libxml2/relaxng"
+	"github.com/killi1812/libxml2/types"
+	"github.com/killi1812/libxml2/xsd"
 )
 
 type ValidationMethod = string
@@ -16,19 +18,46 @@ const (
 )
 
 func Validate(data []byte, method ValidationMethod) error {
+	var schema types.Schema
 	switch method {
 	case XSD:
-		return validateXsd(data)
+		s, err := validateXsd()
+		if err != nil {
+			return err
+		}
+		schema = s
 
 	case RNG:
-		return validateRng(data)
+		s, err := validateRng()
+		if err != nil {
+			return err
+		}
+		schema = s
+	default:
+		return errors.New("validation method not supported")
 	}
+
+	defer schema.Free()
+
+	doc, err := libxml2.Parse(data)
+	if err != nil {
+		fmt.Printf("error parsing XML: %v\nType:%T\n", err, err)
+		return &ErrInvalidXML{Reason: err.Error()}
+	}
+	defer doc.Free() // Free memory
+
+	if err := schema.Validate(doc); err != nil {
+		// TODO: combine to one err
+		return err
+	}
+
+	fmt.Println("XML is valid!")
 	return nil
 }
 
 const (
 	_XSD_FILE_NAME = "schemas/schema.xsd"
-	_RNG_FILE_NAME = "schema.xsd"
+	_RNG_FILE_NAME = "schemas/schema.rng"
 )
 
 type ErrInvalidXML struct {
@@ -39,35 +68,20 @@ func (e *ErrInvalidXML) Error() string {
 	return e.Reason
 }
 
-func validateXsd(data []byte) error {
-	schemaData, err := os.ReadFile(_XSD_FILE_NAME)
+func validateXsd() (types.Schema, error) {
+	// NOTE: writes a nice output to console but doesn't have great error returns
+	schema, err := xsd.ParseFromFile(_XSD_FILE_NAME)
 	if err != nil {
-		return fmt.Errorf("error reading XSD file: %v", err)
+		return nil, fmt.Errorf("error parsing XSD: %v", err)
 	}
-	// NOTE: writes a nice output to console but doen't have great error returns
-	schema, err := xsd.Parse(schemaData)
-	if err != nil {
-		return fmt.Errorf("error parsing XSD: %v", err)
-	}
-	defer schema.Free()
-
-	doc, err := libxml2.Parse(data)
-	if err != nil {
-		fmt.Printf("error parsing XML: %v\nType:%T\n", err, err)
-		return &ErrInvalidXML{Reason: err.Error()}
-	}
-	defer doc.Free() // Free memory
-
-	// Validate XML against XSD
-	if err := schema.Validate(doc); err != nil {
-		return err
-	}
-
-	fmt.Println("XML is valid!")
-	return nil
+	return schema, nil
 }
 
-// TODO: Change to struct of xml
-func validateRng(data any) error {
-	return nil
+func validateRng() (types.Schema, error) {
+	// NOTE: Not really the best error output
+	schema, err := relaxng.ParseFromFile(_RNG_FILE_NAME)
+	if err != nil {
+		return nil, fmt.Errorf("error parsing RNG: %v", err)
+	}
+	return schema, nil
 }
