@@ -6,7 +6,6 @@ import (
 )
 
 type IgApi interface {
-	// TODO: make real return types
 	GetUsernameByUserId(userId string) (*InstagramUsername, error)
 }
 
@@ -14,7 +13,7 @@ func IgApiFactory() (IgApi, error) {
 	switch config.OPTION_API {
 	case 1:
 		return NewMockApi(), nil
-
+		// TODO: Implement a real api
 	case 2:
 		return nil, nil
 

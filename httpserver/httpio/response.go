@@ -9,6 +9,7 @@ import (
 	"go.uber.org/zap"
 )
 
+// TODO: see about simplifying this
 type StandardHTTPResponse struct {
 	StatusCode int    `json:"statusCode"`
 	Status     string `json:"status"`

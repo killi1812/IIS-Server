@@ -47,7 +47,7 @@ func Validate(data []byte, method ValidationMethod) error {
 	defer doc.Free() // Free memory
 
 	if err := schema.Validate(doc); err != nil {
-		// TODO: combine to one err
+		// TODO: return ErrInvalidXML istead of  types.SchemaValidationError
 		return err
 	}
 

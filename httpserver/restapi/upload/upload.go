@@ -6,7 +6,6 @@ import (
 	"iis_server/config"
 	"iis_server/httpserver/httpio"
 	"iis_server/xmlvalidator"
-	"io"
 	"net/http"
 	"os"
 	"strings"
@@ -55,40 +54,12 @@ func HandleUploadFile(w http.ResponseWriter, r *http.Request, ps httprouter.Para
 		return
 	}
 
-	tempFile, err := os.CreateTemp(config.TMP_FOLDER, "part*")
-	if err != nil {
-		zap.S().Errorf("Cannot create temp file, err = %v", err)
-		httpio.WriteStandardHTTPResponse(w, http.StatusInternalServerError, nil, err)
-		return
-	}
-
-	tempName := tempFile.Name()
-	zap.S().Infof("Temp file name = %v", tempName)
-	defer tempFile.Close()
-
-	n, err := io.Copy(tempFile, file)
-	if err != nil {
-		zap.S().Errorf("Cannot copy content to temp file, err = %v", err)
-		// write response
-		httpio.WriteStandardHTTPResponse(w, http.StatusInternalServerError, nil, err)
-		return
-
-	}
-	zap.S().Debugf("Number of bytes written = %v", n)
-	tempFile.Close()
-
 	filePath := fmt.Sprintf("%v/%v", config.UPLOAD_FOLDER, header.Filename)
-	zap.S().Debugf("Upload file path = %v", filePath)
-
-	err = os.Rename(tempName, filePath)
-	if err != nil {
-		zap.S().Errorf("Cannot rename temp file, err = %v", err)
-		// write response
+	if err := os.WriteFile(filePath, data, 0644); err != nil {
+		zap.S().Errorf("Error writing a file %s, err = %s", filePath, err.Error())
 		httpio.WriteStandardHTTPResponse(w, http.StatusInternalServerError, nil, err)
 		return
 	}
-	zap.S().Debugf("Renamed temp file to %v", filePath)
-
 	// write response
 	respPayload := UploadFileResponsePayload{
 		FileName: filePath,

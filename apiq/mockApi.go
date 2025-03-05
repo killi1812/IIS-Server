@@ -18,9 +18,6 @@ func NewMockApi() *MockApi {
 }
 
 func (api *MockApi) GetUsernameByUserId(userId string) (*InstagramUsername, error) {
-	// TODO: change
-	// u := "https://instagram-looter2.p.rapidapi.com/id?id=18527"
-
 	tmpU, err := url.JoinPath(config.MOCK_API, "id")
 	if err != nil {
 		return nil, err
@@ -49,7 +46,7 @@ func (api *MockApi) GetUsernameByUserId(userId string) (*InstagramUsername, erro
 	}
 	fmt.Printf("res: %v\n", res)
 	if res.StatusCode != 200 {
-		return nil, errors.New("Not Found")
+		return nil, errors.New("not found")
 	}
 
 	var resp InstagramUsername
