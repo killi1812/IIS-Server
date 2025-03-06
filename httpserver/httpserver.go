@@ -20,7 +20,6 @@ func Start(ctx context.Context, wg *sync.WaitGroup, schedulerCancel context.Canc
 	router := httprouter.New()
 	setupHandlers(router, schedulerCancel)
 
-	// setup server
 	srv := &http.Server{
 		Addr:         port,
 		Handler:      router,
@@ -42,7 +41,6 @@ func Start(ctx context.Context, wg *sync.WaitGroup, schedulerCancel context.Canc
 	// wait for context cancellation
 	<-ctx.Done()
 
-	// shutdown server
 	timeoutCtx, timeoutCancel := context.WithTimeout(context.Background(), 5*time.Second)
 	defer timeoutCancel()
 	err := srv.Shutdown(timeoutCtx)
