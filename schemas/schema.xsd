@@ -1,13 +1,76 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
-    <xs:element name="person">
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema attributeFormDefault="unqualified" elementFormDefault="qualified"
+    xmlns:xs="http://www.w3.org/2001/XMLSchema">
+    <xs:element name="UserInfo">
         <xs:complexType>
             <xs:sequence>
-                <xs:element name="name" type="xs:string" />
-                <xs:element name="age" type="xs:integer" />
-                <xs:element name="email" type="xs:string" />
+                <xs:element name="Status" type="xs:boolean" />
+                <xs:element name="FullName" type="xs:string" />
+                <xs:element name="IsMemorialized" type="xs:boolean" />
+                <xs:element name="IsPrivate" type="xs:boolean" />
+                <xs:element name="Username" type="xs:string" />
+                <xs:element name="IsRegulatedC18" type="xs:boolean" />
+                <xs:element name="TextPostAppBadgeLabel" type="xs:string" />
+                <xs:element name="ShowTextPostAppBadge" type="xs:boolean" />
+                <xs:element name="Pk" type="xs:unsignedInt" />
+                <xs:element name="ProfilePicURL" type="xs:string" />
+                <xs:element name="HdProfilePicURLInfo">
+                    <xs:complexType>
+                        <xs:sequence>
+                            <xs:element name="URL" type="xs:string" />
+                        </xs:sequence>
+                    </xs:complexType>
+                </xs:element>
+                <xs:element name="IsUnpublished" type="xs:boolean" />
+                <xs:element name="BiographyWithEntities">
+                    <xs:complexType>
+                        <xs:sequence>
+                            <xs:element maxOccurs="unbounded" name="Entities">
+                                <xs:complexType>
+                                    <xs:sequence>
+                                        <xs:element name="User">
+                                            <xs:complexType>
+                                                <xs:sequence>
+                                                    <xs:element name="Username" type="xs:string" />
+                                                    <xs:element name="ID" type="xs:unsignedLong" />
+                                                </xs:sequence>
+                                            </xs:complexType>
+                                        </xs:element>
+                                    </xs:sequence>
+                                </xs:complexType>
+                            </xs:element>
+                        </xs:sequence>
+                    </xs:complexType>
+                </xs:element>
+                <xs:element maxOccurs="unbounded" name="BioLinks">
+                    <xs:complexType>
+                        <xs:sequence>
+                            <xs:element name="LinkType" type="xs:string" />
+                            <xs:element name="LynxURL" type="xs:string" />
+                            <xs:element name="Title" type="xs:string" />
+                            <xs:element name="URL" type="xs:string" />
+                        </xs:sequence>
+                    </xs:complexType>
+                </xs:element>
+                <xs:element name="ExternalLynxURL" type="xs:string" />
+                <xs:element name="ExternalURL" type="xs:string" />
+                <xs:element name="FbidV2" type="xs:unsignedLong" />
+                <xs:element name="InteropMessagingUserFbid" type="xs:unsignedLong" />
+                <xs:element name="AccountType" type="xs:unsignedByte" />
+                <xs:element name="Biography" type="xs:string" />
+                <xs:element name="IsEmbedsDisabled" type="xs:boolean" />
+                <xs:element name="ShowAccountTransparencyDetails" type="xs:boolean" />
+                <xs:element name="IsVerified" type="xs:boolean" />
+                <xs:element name="FollowerCount" type="xs:unsignedInt" />
+                <xs:element name="IsBusiness" type="xs:boolean" />
+                <xs:element name="Category" type="xs:string" />
+                <xs:element name="ShouldShowCategory" type="xs:boolean" />
+                <xs:element name="FollowingCount" type="xs:unsignedShort" />
+                <xs:element name="MediaCount" type="xs:unsignedShort" />
+                <xs:element name="TotalClipsCount" type="xs:unsignedByte" />
+                <xs:element name="ID" type="xs:unsignedInt" />
+                <xs:element name="Attempts" type="xs:unsignedByte" />
             </xs:sequence>
         </xs:complexType>
     </xs:element>
 </xs:schema>
-

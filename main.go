@@ -1,6 +1,8 @@
 package main
 
 import (
+	"encoding/json"
+	"encoding/xml"
 	"fmt"
 	"iis_server/apiq"
 	"iis_server/config"
@@ -38,7 +40,8 @@ func setup() error {
 	}
 	config.RapidApiKey = os.Getenv("RAPIDAPI_KEY")
 
-	testApi()
+	//	testApi()
+	TestJsonToXml()
 	return nil
 }
 
@@ -51,4 +54,44 @@ func testApi() {
 	value, err := api.GetUsernameByUserId("18527")
 	fmt.Printf("err: %v\n", err)
 	fmt.Printf("value: %v\n", value)
+}
+
+func TestJsonToXml() {
+	jsonFile, err := os.Open("data.json")
+	if err != nil {
+		fmt.Println("Error opening file:", err)
+		return
+	}
+	defer jsonFile.Close()
+
+	// Read file content
+	byteValue, err := os.ReadFile("data.json")
+	if err != nil {
+		fmt.Println("Error reading file:", err)
+		return
+	}
+
+	// Decode JSON
+	var data apiq.UserInfo
+	err = json.Unmarshal(byteValue, &data)
+	if err != nil {
+		fmt.Println("Error decoding JSON:", err)
+		return
+	}
+
+	// Convert to XML
+	xmlData, err := xml.MarshalIndent(data, "", "  ")
+	if err != nil {
+		fmt.Println("Error converting to XML:", err)
+		return
+	}
+
+	// Print XML
+	fmt.Println(string(xmlData))
+
+	// Optionally, write to an XML file
+	err = os.WriteFile("data.xml", xmlData, 0644)
+	if err != nil {
+		fmt.Println("Error writing XML file:", err)
+	}
 }

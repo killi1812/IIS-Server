@@ -1,16 +1,58 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <grammar xmlns="http://relaxng.org/ns/structure/1.0" datatypeLibrary="http://www.w3.org/2001/XMLSchema-datatypes">
-    <start>
-        <element name="person">
-            <element name="name">
-                <text />
-            </element>
-            <element name="age">
-                <data type="int" />
-            </element>
-            <element name="email">
-                <text />
-            </element>
+<start>
+        <element name="UserInfo">
+            <zeroOrMore>
+                <element name="Status"><data type="boolean"/></element>
+                <element name="FullName"><data type="string"/></element>
+                <element name="IsMemorialized"><data type="boolean"/></element>
+                <element name="IsPrivate"><data type="boolean"/></element>
+                <element name="Username"><data type="string"/></element>
+                <element name="IsRegulatedC18"><data type="boolean"/></element>
+                <element name="TextPostAppBadgeLabel"><data type="string"/></element>
+                <element name="ShowTextPostAppBadge"><data type="boolean"/></element>
+                <element name="Pk"><data type="unsignedInt"/></element>
+                <element name="ProfilePicURL"><data type="string"/></element>
+                <element name="HdProfilePicURLInfo">
+                    <element name="URL"><data type="string"/></element>
+                </element>
+                <element name="IsUnpublished"><data type="boolean"/></element>
+                <element name="BiographyWithEntities">
+                    <zeroOrMore>
+                        <element name="Entities">
+                            <element name="User">
+                                <element name="Username"><data type="string"/></element>
+                                <element name="ID"><data type="unsignedLong"/></element>
+                            </element>
+                        </element>
+                    </zeroOrMore>
+                </element>
+                <zeroOrMore>
+                    <element name="BioLinks">
+                        <element name="LinkType"><data type="string"/></element>
+                        <element name="LynxURL"><data type="string"/></element>
+                        <element name="Title"><data type="string"/></element>
+                        <element name="URL"><data type="string"/></element>
+                    </element>
+                </zeroOrMore>
+                <element name="ExternalLynxURL"><data type="string"/></element>
+                <element name="ExternalURL"><data type="string"/></element>
+                <element name="FbidV2"><data type="unsignedLong"/></element>
+                <element name="InteropMessagingUserFbid"><data type="unsignedLong"/></element>
+                <element name="AccountType"><data type="unsignedByte"/></element>
+                <element name="Biography"><data type="string"/></element>
+                <element name="IsEmbedsDisabled"><data type="boolean"/></element>
+                <element name="ShowAccountTransparencyDetails"><data type="boolean"/></element>
+                <element name="IsVerified"><data type="boolean"/></element>
+                <element name="FollowerCount"><data type="unsignedInt"/></element>
+                <element name="IsBusiness"><data type="boolean"/></element>
+                <element name="Category"><data type="string"/></element>
+                <element name="ShouldShowCategory"><data type="boolean"/></element>
+                <element name="FollowingCount"><data type="unsignedShort"/></element>
+                <element name="MediaCount"><data type="unsignedShort"/></element>
+                <element name="TotalClipsCount"><data type="unsignedByte"/></element>
+                <element name="ID"><data type="unsignedInt"/></element>
+                <element name="Attempts"><data type="unsignedByte"/></element>
+            </zeroOrMore>
         </element>
-    </start>
-</grammar>
+    </start></grammar>
