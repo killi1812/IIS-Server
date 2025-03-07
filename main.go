@@ -24,7 +24,6 @@ func main() {
 
 func setup() error {
 	_ = os.Mkdir(config.UPLOAD_FOLDER, 0755)
-	_ = os.Mkdir(config.TMP_FOLDER, 0755)
 	_ = os.Mkdir(config.XML_SCHEMAS_FOLDER, 0755)
 
 	logger, err := zap.NewDevelopment()
@@ -57,21 +56,12 @@ func testApi() {
 }
 
 func TestJsonToXml() {
-	jsonFile, err := os.Open("data.json")
-	if err != nil {
-		fmt.Println("Error opening file:", err)
-		return
-	}
-	defer jsonFile.Close()
-
-	// Read file content
 	byteValue, err := os.ReadFile("data.json")
 	if err != nil {
 		fmt.Println("Error reading file:", err)
 		return
 	}
 
-	// Decode JSON
 	var data apiq.UserInfo
 	err = json.Unmarshal(byteValue, &data)
 	if err != nil {
@@ -79,17 +69,12 @@ func TestJsonToXml() {
 		return
 	}
 
-	// Convert to XML
-	xmlData, err := xml.MarshalIndent(data, "", "  ")
+	xmlData, err := xml.Marshal(data)
 	if err != nil {
 		fmt.Println("Error converting to XML:", err)
 		return
 	}
 
-	// Print XML
-	fmt.Println(string(xmlData))
-
-	// Optionally, write to an XML file
 	err = os.WriteFile("data.xml", xmlData, 0644)
 	if err != nil {
 		fmt.Println("Error writing XML file:", err)

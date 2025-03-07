@@ -1,5 +1,15 @@
 package apiq
 
+import (
+	"encoding/xml"
+	"errors"
+)
+
+var (
+	ErrApiRequest   = errors.New("error requesting api")
+	ErrCityNotFound = errors.New("error city not found`")
+)
+
 type InstagramUsername struct {
 	Status   bool   `json:"status" xml:"status"`
 	Username string `json:"username"`
@@ -90,4 +100,37 @@ type UserInfo struct {
 	ReelMediaSeenTimestamp         interface{}            `json:"reel_media_seen_timestamp"`
 	ID                             string                 `json:"id"`
 	Attempts                       string                 `json:"attempts"`
+}
+
+// https://vrijeme.hr/hrvatska_n.xml data
+type City struct {
+	Text    string       `xml:",chardata"`
+	Autom   string       `xml:"autom,attr"`
+	GradIme string       `xml:"GradIme"`
+	Lat     string       `xml:"Lat"`
+	Lon     string       `xml:"Lon"`
+	Podatci *WeatherType `xml:"Podatci"`
+}
+type WeatherType struct {
+	Text         string `xml:",chardata"`
+	Temp         string `xml:"Temp"`
+	Vlaga        string `xml:"Vlaga"`
+	Tlak         string `xml:"Tlak"`
+	TlakTend     string `xml:"TlakTend"`
+	VjetarSmjer  string `xml:"VjetarSmjer"`
+	VjetarBrzina string `xml:"VjetarBrzina"`
+	Vrijeme      string `xml:"Vrijeme"`
+	VrijemeZnak  string `xml:"VrijemeZnak"`
+}
+type Date struct {
+	Text   string `xml:",chardata"`
+	Datum  string `xml:"Datum"`
+	Termin string `xml:"Termin"`
+}
+
+type Country struct {
+	XMLName     xml.Name `xml:"Hrvatska"`
+	Text        string   `xml:",chardata"`
+	DatumTermin *Date    `xml:"DatumTermin"`
+	Grad        []City   `xml:"Grad"`
 }

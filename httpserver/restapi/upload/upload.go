@@ -15,7 +15,6 @@ import (
 	"go.uber.org/zap"
 )
 
-// TODO: Simplify function mby no need tmp file
 func HandleUploadFile(w http.ResponseWriter, r *http.Request, ps httprouter.Params) {
 	parts := strings.Split(r.URL.Path, "/")
 	method := parts[len(parts)-1]

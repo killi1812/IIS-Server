@@ -5,11 +5,12 @@ import (
 	"iis_server/config"
 )
 
-type IgApi interface {
+type IGApi interface {
 	GetUsernameByUserId(userId string) (*InstagramUsername, error)
+	GetUserInfoByUsername(username string) (*UserInfo, error)
 }
 
-func IgApiFactory() (IgApi, error) {
+func IgApiFactory() (IGApi, error) {
 	switch config.OPTION_API {
 	case 1:
 		return NewMockApi(), nil
@@ -20,4 +21,8 @@ func IgApiFactory() (IgApi, error) {
 	default:
 		return nil, errors.New("bad option")
 	}
+}
+
+type WeatherApi interface {
+	GetWeatherForCity(city string) (*City, error)
 }

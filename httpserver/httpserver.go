@@ -4,6 +4,7 @@ import (
 	"context"
 	"errors"
 	"iis_server/httpserver/restapi/upload"
+	"iis_server/httpserver/xmlrpc"
 	"net/http"
 	"sync"
 	"time"
@@ -51,36 +52,20 @@ func Start(ctx context.Context, wg *sync.WaitGroup, schedulerCancel context.Canc
 }
 
 func setupHandlers(router *httprouter.Router, schedulerCancel context.CancelFunc) {
-	/*
-		// server management
-		getServerStatus := http.HandlerFunc(mgmt.GetServerStatus)
-		getServerVersion := http.HandlerFunc(mgmt.GetServerVersion)
-		getServerStatistics := http.HandlerFunc(mgmt.GetServerStatistics)
-		// for shutdown, get handler function
-		shutdownServer := mgmt.ShutdownServer(schedulerCancel)
-
-		mux.HandleFunc("/getServerStatus", getServerStatus)
-		mux.HandleFunc("/getServerVersion", getServerVersion)
-		mux.HandleFunc("/getServerStatistics", getServerStatistics)
-		mux.HandleFunc("/shutdownServer", shutdownServer)
-
-		// upload
-		uploadDocument := http.HandlerFunc(upload.UploadDocument)
-		uploadFile := http.HandlerFunc(upload.UploadFile)
-
-		mux.HandleFunc("/uploadDocument", uploadDocument)
-		mux.HandleFunc("/uploadFile", uploadFile)
-
-		// data
-		getData := http.HandlerFunc(data.GetData)
-		mux.HandleFunc("/getData", getData)
-	*/
-
+	// Basic ping
 	router.GET("/", func(w http.ResponseWriter, r *http.Request, ps httprouter.Params) {
 		w.Write([]byte("Hello"))
 	})
 
+	// Validator
+	// REST api
 	uploadAndValidate := httprouter.Handle(upload.HandleUploadFile)
 	router.POST("/upload/xsd", uploadAndValidate)
 	router.POST("/upload/rng", uploadAndValidate)
+
+	// SOAP
+
+	// XML-RPC
+	getWeather := httprouter.Handle(xmlrpc.GetWeather)
+	router.GET("/weather/:city", getWeather)
 }
