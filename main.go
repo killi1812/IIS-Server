@@ -39,7 +39,7 @@ func setup() error {
 		zap.S().DPanicf("failed to load .env err = %s", err.Error())
 	}
 	config.RapidApiKey = os.Getenv("RAPIDAPI_KEY")
-	secure.JwtKey = []byte(os.Getenv("JWT_KEY"))
+	secure.Init()
 
 	//	testApi()
 	TestJsonToXml()

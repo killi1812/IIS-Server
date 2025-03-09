@@ -58,6 +58,7 @@ func setupHandlers(router *mux.Router, schedulerCancel context.CancelFunc) {
 		w.Write([]byte("Hello"))
 	})
 	router.HandleFunc("/", helloFunc).Methods("GET")
+	router.Handle("/secure", secure.Protect(helloFunc)).Methods("GET")
 
 	// REST api - Validator
 	uploadAndValidate := http.HandlerFunc(upload.HandleUploadFile)
@@ -65,9 +66,7 @@ func setupHandlers(router *mux.Router, schedulerCancel context.CancelFunc) {
 	router.HandleFunc("/upload/rng", uploadAndValidate).Methods("POST")
 
 	// Secure
-	router.HandleFunc("/login", secure.Login).Methods("POST")
-	router.Handle("/secure", secure.Protect(helloFunc)).Methods("GET")
-
+	secure.RegisterEndpoints(router)
 	// SOAP
 
 	// XML-RPC
