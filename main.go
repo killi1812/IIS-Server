@@ -6,6 +6,7 @@ import (
 	"fmt"
 	"iis_server/apiq"
 	"iis_server/config"
+	"iis_server/httpserver/restapi/secure"
 	"iis_server/scheduler"
 	"os"
 
@@ -38,6 +39,7 @@ func setup() error {
 		zap.S().DPanicf("failed to load .env err = %s", err.Error())
 	}
 	config.RapidApiKey = os.Getenv("RAPIDAPI_KEY")
+	secure.JwtKey = []byte(os.Getenv("JWT_KEY"))
 
 	//	testApi()
 	TestJsonToXml()

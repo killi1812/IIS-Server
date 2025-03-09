@@ -3,6 +3,7 @@ package httpserver
 import (
 	"context"
 	"errors"
+	"iis_server/httpserver/restapi/secure"
 	"iis_server/httpserver/restapi/upload"
 	"iis_server/httpserver/xmlrpc"
 	"net/http"
@@ -53,15 +54,19 @@ func Start(ctx context.Context, wg *sync.WaitGroup, schedulerCancel context.Canc
 
 func setupHandlers(router *mux.Router, schedulerCancel context.CancelFunc) {
 	// Basic ping
-	router.HandleFunc("/", func(w http.ResponseWriter, r *http.Request) {
+	helloFunc := http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
 		w.Write([]byte("Hello"))
-	}).Methods("GET")
+	})
+	router.HandleFunc("/", helloFunc).Methods("GET")
 
-	// Validator
-	// REST api
-	uploadAndValidate := upload.HandleUploadFile
+	// REST api - Validator
+	uploadAndValidate := http.HandlerFunc(upload.HandleUploadFile)
 	router.HandleFunc("/upload/xsd", uploadAndValidate).Methods("POST")
 	router.HandleFunc("/upload/rng", uploadAndValidate).Methods("POST")
+
+	// Secure
+	router.HandleFunc("/login", secure.Login).Methods("POST")
+	router.Handle("/secure", secure.Protect(helloFunc)).Methods("GET")
 
 	// SOAP
 
