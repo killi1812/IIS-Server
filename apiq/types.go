@@ -104,7 +104,7 @@ type UserInfo struct {
 
 // https://vrijeme.hr/hrvatska_n.xml data
 type City struct {
-	Text    string       `xml:",chardata"`
+	// Text    string       `xml:",chardata"`
 	Autom   string       `xml:"autom,attr"`
 	GradIme string       `xml:"GradIme"`
 	Lat     string       `xml:"Lat"`
@@ -112,7 +112,7 @@ type City struct {
 	Podatci *WeatherType `xml:"Podatci"`
 }
 type WeatherType struct {
-	Text         string `xml:",chardata"`
+	// Text         string `xml:",chardata"`
 	Temp         string `xml:"Temp"`
 	Vlaga        string `xml:"Vlaga"`
 	Tlak         string `xml:"Tlak"`
@@ -123,7 +123,7 @@ type WeatherType struct {
 	VrijemeZnak  string `xml:"VrijemeZnak"`
 }
 type Date struct {
-	Text   string `xml:",chardata"`
+	// Text   string `xml:",chardata"`
 	Datum  string `xml:"Datum"`
 	Termin string `xml:"Termin"`
 }

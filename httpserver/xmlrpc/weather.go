@@ -1,19 +1,25 @@
 package xmlrpc
 
+/*
 import (
-	"fmt"
+	"encoding/xml"
 	"iis_server/apiq"
 	"net/http"
-
-	"github.com/julienschmidt/httprouter"
 )
 
-func GetWeather(w http.ResponseWriter, r *http.Request, ps httprouter.Params) {
-	city := ps.ByName("city")
-	data, err := apiq.GetWeatherForCity(city)
+func (_ *WeaterService) GetWeather(w http.ResponseWriter, r *http.Request) {
+	data, err := apiq.GetWeatherForCity("Zagreb")
 	if err != nil {
 		// TODO: handl xmlrpc error return
+		w.WriteHeader(http.StatusInternalServerError)
 		return
 	}
-	fmt.Printf("data: %v\n", data)
+
+	res, err := xml.MarshalIndent(data, " ", " ")
+	if err != err {
+		w.WriteHeader(http.StatusInternalServerError)
+		return
+	}
+
 }
+*/

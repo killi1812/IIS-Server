@@ -58,7 +58,7 @@ func WriteStandardHTTPResponse(w http.ResponseWriter, httpStatus int, payload an
 	w.WriteHeader(httpStatus)
 
 	// write data
-	jsonResp, err := json.MarshalIndent(httpResponse, "", " ")
+	jsonResp, err := json.Marshal(httpResponse)
 	if err != nil {
 		zap.S().Errorf("Cannot convert response to json, err = %v", err)
 		jsonResp = []byte{}

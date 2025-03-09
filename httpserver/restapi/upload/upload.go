@@ -10,12 +10,11 @@ import (
 	"os"
 	"strings"
 
-	"github.com/julienschmidt/httprouter"
 	"github.com/killi1812/libxml2/types"
 	"go.uber.org/zap"
 )
 
-func HandleUploadFile(w http.ResponseWriter, r *http.Request, ps httprouter.Params) {
+func HandleUploadFile(w http.ResponseWriter, r *http.Request) {
 	parts := strings.Split(r.URL.Path, "/")
 	method := parts[len(parts)-1]
 	zap.S().Infof("Parsing method %s", method)

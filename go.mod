@@ -12,6 +12,8 @@ require (
 )
 
 require (
+	github.com/gorilla/mux v1.8.1
+	github.com/gorilla/rpc v1.2.1
 	github.com/julienschmidt/httprouter v1.3.0
 	go.uber.org/multierr v1.11.0 // indirect
 )

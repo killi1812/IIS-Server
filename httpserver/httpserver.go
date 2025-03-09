@@ -9,7 +9,7 @@ import (
 	"sync"
 	"time"
 
-	"github.com/julienschmidt/httprouter"
+	"github.com/gorilla/mux"
 	"go.uber.org/zap"
 )
 
@@ -18,7 +18,7 @@ const port = ":5555"
 func Start(ctx context.Context, wg *sync.WaitGroup, schedulerCancel context.CancelFunc) {
 	defer wg.Done()
 
-	router := httprouter.New()
+	router := mux.NewRouter()
 	setupHandlers(router, schedulerCancel)
 
 	srv := &http.Server{
@@ -51,21 +51,20 @@ func Start(ctx context.Context, wg *sync.WaitGroup, schedulerCancel context.Canc
 	zap.S().Info("HTTP server was shut down")
 }
 
-func setupHandlers(router *httprouter.Router, schedulerCancel context.CancelFunc) {
+func setupHandlers(router *mux.Router, schedulerCancel context.CancelFunc) {
 	// Basic ping
-	router.GET("/", func(w http.ResponseWriter, r *http.Request, ps httprouter.Params) {
+	router.HandleFunc("/", func(w http.ResponseWriter, r *http.Request) {
 		w.Write([]byte("Hello"))
-	})
+	}).Methods("GET")
 
 	// Validator
 	// REST api
-	uploadAndValidate := httprouter.Handle(upload.HandleUploadFile)
-	router.POST("/upload/xsd", uploadAndValidate)
-	router.POST("/upload/rng", uploadAndValidate)
+	uploadAndValidate := upload.HandleUploadFile
+	router.HandleFunc("/upload/xsd", uploadAndValidate).Methods("POST")
+	router.HandleFunc("/upload/rng", uploadAndValidate).Methods("POST")
 
 	// SOAP
 
 	// XML-RPC
-	getWeather := httprouter.Handle(xmlrpc.GetWeather)
-	router.GET("/weather/:city", getWeather)
+	xmlrpc.RegisterEndpoint(router)
 }
