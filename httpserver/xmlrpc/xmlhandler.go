@@ -3,7 +3,6 @@ package xmlrpc
 import (
 	"bytes"
 	"encoding/xml"
-	"fmt"
 	"iis_server/apiq"
 	"io"
 	"net/http"
@@ -40,10 +39,6 @@ type ResultValue struct {
 
 // TODO: Finish
 func RegisterEndpoint(router *mux.Router) {
-	// XML-RPC
-	// s := rpc.NewServer()
-	// s.RegisterCodec(xml.NewCodec(), "text/xml")
-	// s.RegisterService(new(WeaterService), "weather")
 	router.HandleFunc("/weather", xmlRPCHandler).Methods("POST")
 }
 
@@ -62,12 +57,10 @@ func xmlRPCHandler(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 
-	// Only support "Add" method
-	if req.MethodName != "Add" {
+	if req.MethodName != "GetTemp" {
 		http.Error(w, "Method not supported", http.StatusNotImplemented)
 		return
 	}
-	fmt.Printf("req: %+v\n", req)
 
 	// Process request
 	data, err := new(apiq.WeaterService).GetWeatherForCity(req.Param.Value.String)
@@ -81,10 +74,7 @@ func xmlRPCHandler(w http.ResponseWriter, r *http.Request) {
 		resp.Params.Param = append(resp.Params.Param, ResultValue{Value: c})
 	}
 
-	// Encode XML response
 	var buf bytes.Buffer
 	xml.NewEncoder(&buf).Encode(resp)
-
-	// Send response
 	w.Write(buf.Bytes())
 }
