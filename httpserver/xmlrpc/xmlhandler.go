@@ -6,6 +6,7 @@ import (
 	"iis_server/apiq"
 	"io"
 	"net/http"
+	"strings"
 
 	"github.com/gorilla/mux"
 )
@@ -34,7 +35,8 @@ type RPCResult struct {
 }
 
 type ResultValue struct {
-	Value apiq.City `xml:"value>Grad"`
+	Location string `xml:"value>Location"`
+	Temp     string `xml:"value>Temptriture"`
 }
 
 // TODO: Finish
@@ -71,7 +73,7 @@ func xmlRPCHandler(w http.ResponseWriter, r *http.Request) {
 
 	var resp RPCResponse
 	for _, c := range data {
-		resp.Params.Param = append(resp.Params.Param, ResultValue{Value: c})
+		resp.Params.Param = append(resp.Params.Param, ResultValue{c.GradIme, strings.Trim(c.Podatci.Temp, " ")})
 	}
 
 	var buf bytes.Buffer
