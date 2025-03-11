@@ -39,7 +39,6 @@ type ResultValue struct {
 	Temp     string `xml:"value>Temptriture"`
 }
 
-// TODO: Finish
 func RegisterEndpoint(router *mux.Router) {
 	router.HandleFunc("/weather", xmlRPCHandler).Methods("POST")
 }
