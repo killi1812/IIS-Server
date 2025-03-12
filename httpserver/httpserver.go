@@ -52,12 +52,30 @@ func Start(ctx context.Context, wg *sync.WaitGroup, schedulerCancel context.Canc
 	zap.S().Info("HTTP server was shut down")
 }
 
+func addCorsHeader(w http.ResponseWriter, r *http.Request) {
+	headers := w.Header()
+	headers.Add("Access-Control-Allow-Origin", "http://localhost:5555")
+	headers.Add("Vary", "Origin")
+	headers.Add("Vary", "Access-Control-Request-Method")
+	headers.Add("Vary", "Access-Control-Request-Headers")
+	headers.Add("Access-Control-Allow-Headers", "Content-Type, Origin, Accept, token, Access-Control-Allow-Origin")
+	headers.Add("Access-Control-Allow-Methods", "GET,POST,OPTIONS,DELETE")
+}
+
 func setupHandlers(router *mux.Router, schedulerCancel context.CancelFunc) {
 	// Basic ping
 	helloFunc := http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
+		headers := w.Header()
+		headers.Add("Access-Control-Allow-Origin", "http://localhost:3000")
+		headers.Add("Vary", "Origin")
+		headers.Add("Vary", "Access-Control-Request-Method")
+		headers.Add("Vary", "Access-Control-Request-Headers")
+		headers.Add("Access-Control-Allow-Headers", "Content-Type, Origin, Accept, token, Access-Control-Allow-Origin")
+		headers.Add("Access-Control-Allow-Methods", "GET,POST,OPTIONS,DELETE")
 		w.Write([]byte("Hello"))
 	})
-	router.HandleFunc("/", helloFunc).Methods("GET")
+	router.HandleFunc("/", helloFunc).Methods("GET", "OPTIONS")
+	// router.HandleFunc("/", addCorsHeader).Methods("OPTIONS")
 	router.Handle("/secure", secure.Protect(helloFunc)).Methods("GET")
 
 	// REST api - Validator
