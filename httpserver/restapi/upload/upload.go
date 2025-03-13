@@ -69,10 +69,6 @@ func HandleUploadFile(w http.ResponseWriter, r *http.Request) {
 		httpio.WriteStandardHTTPResponse(w, http.StatusInternalServerError, nil, err)
 		return
 	}
-	// write response
-	respPayload := UploadFileResponsePayload{
-		FileName: filePath,
-	}
 
-	httpio.WriteStandardHTTPResponse(w, http.StatusOK, respPayload, nil)
+	httpio.WriteStandardHTTPResponse(w, http.StatusOK, filePath, nil)
 }

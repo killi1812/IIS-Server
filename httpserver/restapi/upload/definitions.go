@@ -9,14 +9,6 @@ type UploadDocumentRequestPayload struct {
 	Data string `json:"data"`
 }
 
-type UploadDocumentResponsePayload struct {
-	FileName string `json:"fileName"`
-}
-
-type UploadFileResponsePayload struct {
-	FileName string `json:"fileName"`
-}
-
 const (
 	TEMP_FILE_PREFIX   = "part"
 	UPLOAD_FILE_PREFIX = "file"
