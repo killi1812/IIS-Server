@@ -40,14 +40,14 @@ func HandleUploadFile(w http.ResponseWriter, r *http.Request) {
 	if err := xmlvalidator.Validate(data, method); err != nil {
 		var validationErr types.SchemaValidationError
 		var invalidXmlErr *xmlvalidator.ErrInvalidXML
-		valErrs := []string{}
+		var valErrs error = nil
 		switch {
 		case errors.As(err, &validationErr):
 			zap.S().Infof("errs: %+v\n", validationErr.Errors)
 			for _, err2 := range validationErr.Errors {
-				valErrs = append(valErrs, err2.Error())
+				valErrs = errors.Join(valErrs, err2)
 			}
-			httpio.WriteStandardHTTPResponse(w, http.StatusOK, nil, validationErr)
+			httpio.WriteStandardHTTPResponse(w, http.StatusOK, nil, valErrs)
 			return
 
 		case errors.As(err, &invalidXmlErr):
