@@ -40,7 +40,7 @@ type ResultValue struct {
 }
 
 func RegisterEndpoint(router *mux.Router) {
-	router.HandleFunc("/weather", xmlRPCHandler).Methods("POST")
+	router.HandleFunc("/weather", xmlRPCHandler).Methods("POST", "OPTIONS")
 }
 
 // XML-RPC Handler (Custom Implementation)

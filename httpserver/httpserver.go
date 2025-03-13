@@ -71,13 +71,13 @@ func headersMiddleware(next http.Handler) http.Handler {
 
 func setupHandlers(router *mux.Router, schedulerCancel context.CancelFunc) {
 	router.Use(headersMiddleware)
+
 	// Basic ping
 	helloFunc := http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
 		w.Write([]byte("Hello"))
 	})
-	// router.HandleFunc("/*", helloFunc).Methods("GET", "OPTIONS")
-	// router.HandleFunc("/", addCorsHeader).Methods("OPTIONS")
-	router.Handle("/secure", secure.Protect(helloFunc)).Methods("GET")
+	router.HandleFunc("/", helloFunc).Methods("GET", "OPTIONS")
+	router.Handle("/secure", secure.Protect(helloFunc)).Methods("GET", "OPTIONS")
 
 	// REST api - Validator
 	uploadAndValidate := http.HandlerFunc(upload.HandleUploadFile)
