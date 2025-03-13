@@ -32,7 +32,7 @@ func GetStandardHTTPResponse(Data any, err error) StandardHTTPResponse {
 			errW = err
 		}
 		httpResponse.StatusCode = code
-		httpResponse.Status = errW.Error()
+		httpResponse.Status = "fail"
 
 		httpResponse.Error = err.Error()
 	}

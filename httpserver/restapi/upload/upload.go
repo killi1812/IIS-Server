@@ -23,7 +23,16 @@ func HandleUploadFile(w http.ResponseWriter, r *http.Request) {
 	if err != nil {
 		zap.S().Errorf("Can't read file from form err = %s", err)
 		httpio.WriteStandardHTTPResponse(w, http.StatusInternalServerError, nil, err)
+		return
 	}
+
+	if !strings.Contains(header.Filename, ".xml") {
+		err = errors.New("invalid file extension should be .xml")
+		httpio.WriteStandardHTTPResponse(w, http.StatusBadRequest, nil, err)
+		return
+
+	}
+
 	data := make([]byte, header.Size)
 	file.Read(data)
 	defer file.Close()
@@ -38,18 +47,20 @@ func HandleUploadFile(w http.ResponseWriter, r *http.Request) {
 			for _, err2 := range validationErr.Errors {
 				valErrs = append(valErrs, err2.Error())
 			}
-			httpio.WriteStandardHTTPResponse(w, http.StatusOK, valErrs, nil)
+			httpio.WriteStandardHTTPResponse(w, http.StatusOK, nil, validationErr)
+			return
 
 		case errors.As(err, &invalidXmlErr):
 			zap.S().Infof("Invalid xml err = %v", invalidXmlErr)
 			// TODO: return info on where is the invalid xml
-			httpio.WriteStandardHTTPResponse(w, http.StatusOK, invalidXmlErr.Error(), nil)
+			httpio.WriteStandardHTTPResponse(w, http.StatusOK, nil, invalidXmlErr)
+			return
 
 		default:
 			zap.S().Errorf("Cannot Validate xml, err = %v", err)
 			httpio.WriteStandardHTTPResponse(w, http.StatusInternalServerError, nil, err)
+			return
 		}
-		return
 	}
 
 	filePath := fmt.Sprintf("%v/%v", config.UPLOAD_FOLDER, header.Filename)
