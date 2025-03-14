@@ -9,12 +9,13 @@ import (
 	"strings"
 
 	"github.com/gorilla/mux"
+	"go.uber.org/zap"
 )
 
 type RPCRequest struct {
-	XMLName    xml.Name `xml:"methodCall"`
-	MethodName string   `xml:"methodName"`
-	Param      RPCParam `xml:"param"`
+	XMLName    xml.Name   `xml:"methodCall"`
+	MethodName string     `xml:"methodName"`
+	Params     []RPCParam `xml:"params>param"`
 }
 
 type RPCParam struct {
@@ -57,6 +58,7 @@ func xmlRPCHandler(w http.ResponseWriter, r *http.Request) {
 		http.Error(w, "Invalid XML", http.StatusBadRequest)
 		return
 	}
+	zap.S().Infof("req: %+v\n", req)
 
 	if req.MethodName != "GetTemp" {
 		http.Error(w, "Method not supported", http.StatusNotImplemented)
@@ -64,12 +66,12 @@ func xmlRPCHandler(w http.ResponseWriter, r *http.Request) {
 	}
 
 	// Process request
-	data, err := new(apiq.WeaterService).GetWeatherForCity(req.Param.Value.String)
+	data, err := new(apiq.WeaterService).GetWeatherForCity(req.Params[0].Value.String)
 	if err != nil {
 		http.Error(w, err.Error(), http.StatusBadRequest)
 		return
 	}
-
+	zap.S().Debugf("Found %+v", data)
 	var resp RPCResponse
 	for _, c := range data {
 		resp.Params.Param = append(resp.Params.Param, ResultValue{c.GradIme, strings.Trim(c.Podatci.Temp, " ")})

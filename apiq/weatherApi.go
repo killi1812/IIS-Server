@@ -15,7 +15,7 @@ import (
 type WeaterService struct{}
 
 func (*WeaterService) GetWeatherForCity(query string) ([]City, error) {
-	res, err := http.Get("https://vrijeme.hr/hrvatska_n.xml")
+	res, err := http.Get("http://vrijeme.hr/hrvatska_n.xml")
 	if err != nil {
 		return nil, err
 	}
