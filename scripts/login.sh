@@ -8,7 +8,9 @@ curl -X POST http://localhost:5555/weather -H "Content-Type: text/xml" --data \
     '<?xml version="1.0"?>
 <methodCall>
     <methodName>GetTemp</methodName>
+<params>
         <param><value><string>Zagreb</string></value></param>
+</params>
 </methodCall>' | xmllint --format -
 
 curl -X POST http://localhost:5555/upload/rng \
