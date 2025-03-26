@@ -59,8 +59,8 @@ func headersMiddleware(next http.Handler) http.Handler {
 		headers.Add("Vary", "Origin")
 		headers.Add("Vary", "Access-Control-Request-Method")
 		headers.Add("Vary", "Access-Control-Request-Headers")
-		headers.Add("Access-Control-Allow-Headers", "Content-Type, Origin, Accept, token, Access-Control-Allow-Origin")
-		headers.Add("Access-Control-Allow-Methods", "GET,POST,OPTIONS,DELETE")
+		headers.Add("Access-Control-Allow-Headers", "Content-Type, Origin, Accept, token, Access-Control-Allow-Origin, Authorization")
+		headers.Add("Access-Control-Allow-Methods", "GET,POST,OPTIONS,DELETE,PUT")
 		if r.Method == "OPTIONS" {
 			return
 		}
