@@ -9,9 +9,9 @@ func RegisterEndpoints(router *mux.Router) {
 	// Protected routes
 	api := router.PathPrefix("/users").Subrouter()
 	api.Use(Protect)
-	api.HandleFunc("", GetAllUsersHandler).Methods("GET", "OPTIONS")
+	api.HandleFunc("/", GetAllUsersHandler).Methods("GET", "OPTIONS")
 	api.HandleFunc("/{id}", GetUserHandler).Methods("GET", "OPTIONS")
-	api.HandleFunc("", CreateUserHandler).Methods("POST", "OPTIONS")
+	api.HandleFunc("/", CreateUserHandler).Methods("POST", "OPTIONS")
 	api.HandleFunc("/{id}", UpdateUserHandler).Methods("PUT", "OPTIONS")
 	api.HandleFunc("/{id}", DeleteUserHandler).Methods("DELETE", "OPTIONS")
 }
