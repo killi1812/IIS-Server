@@ -5,6 +5,7 @@ import (
 	"errors"
 	"iis_server/httpserver/restapi/secure"
 	"iis_server/httpserver/restapi/upload"
+	"iis_server/httpserver/soap"
 	"iis_server/httpserver/xmlrpc"
 	"net/http"
 	"sync"
@@ -87,6 +88,7 @@ func setupHandlers(router *mux.Router, schedulerCancel context.CancelFunc) {
 	// Secure
 	secure.RegisterEndpoints(router)
 	// SOAP
+	soap.RegisterEnpint(router)
 
 	// XML-RPC
 	xmlrpc.RegisterEndpoint(router)
