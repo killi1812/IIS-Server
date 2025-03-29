@@ -76,5 +76,6 @@ func xmlRPCHandler(w http.ResponseWriter, r *http.Request) {
 		resp.Params.Param = append(resp.Params.Param, ResultValue{c.GradIme, strings.Trim(c.Podatci.Temp, " ")})
 	}
 
+	w.Header().Set("Content-Type", "text/xml; charset=utf-8")
 	xml.NewEncoder(w).Encode(resp)
 }

@@ -37,20 +37,21 @@ type SOAPResponse struct {
 }
 
 func RegisterEnpint(router *mux.Router) {
-	router.HandleFunc("/soap", handleSOAPRequest).Methods("POST", "OPTIONST")
+	router.HandleFunc("/soap", handleSOAPRequest).Methods("POST", "OPTIONS")
 }
 
 func handleSOAPRequest(w http.ResponseWriter, r *http.Request) {
 	zap.S().Debugf("query: %+v", r.URL.Query())
+
 	if r.URL.Query().Get("wsdl") != "" {
-		w.Header().Set("Content-Type", "text/xml; charset=utf-8")
-		w.WriteHeader(http.StatusOK)
-		data, err := os.ReadFile("UserInfo.wsdl")
+		data, err := os.ReadFile("httpserver/soap/userInfo.wsdl")
 		if err != nil {
 			// TODO: return some err
-			zap.S().Errorf("Error requesting wsdl query:%+v", r.URL.Query())
+			zap.S().DPanicf("Error requesting wsdl query:%+v, err = %+v", r.URL.Query(), err)
 			return
 		}
+
+		w.WriteHeader(http.StatusOK)
 		w.Write(data)
 		return
 	}
@@ -59,12 +60,15 @@ func handleSOAPRequest(w http.ResponseWriter, r *http.Request) {
 	var req SOAPRequest
 	if err := xml.Unmarshal(body, &req); err != nil {
 		// TODO: return error
+		zap.S().Errorf("Error reading request")
+		soapErrorResponse(w, http.StatusInternalServerError, err)
+		return
 	}
 
 	api, err := apiq.IgApiFactory()
 	if err != nil {
 		// TODO: return error
-		zap.S().Errorf("Error creating api")
+		zap.S().DPanicf("Error creating api")
 		return
 	}
 
@@ -73,8 +77,19 @@ func handleSOAPRequest(w http.ResponseWriter, r *http.Request) {
 	if err != nil {
 		// TODO: return error
 		zap.S().Errorf("Error Retriving data from an api")
+		soapErrorResponse(w, http.StatusInternalServerError, err)
 		return
 	}
+
+	soapResponse(w, http.StatusOK, data)
+}
+
+func soapErrorResponse(w http.ResponseWriter, code int, data any) {
+	// TODO: see how to encode errors
+}
+
+func soapResponse(w http.ResponseWriter, code int, data *apiq.UserInfo) {
+	w.Header().Set("Content-Type", "text/xml; charset=utf-8")
 
 	response := SOAPResponse{
 		Xmlns: "http://example.com/soap",
@@ -94,6 +109,6 @@ func handleSOAPRequest(w http.ResponseWriter, r *http.Request) {
 		},
 	}
 
-	w.Header().Set("Content-Type", "text/xml; charset=utf-8")
+	zap.S().Debugf("Responding with code = %d, response = %+v", code, data)
 	xml.NewEncoder(w).Encode(response)
 }
