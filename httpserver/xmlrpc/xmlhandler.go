@@ -1,7 +1,6 @@
 package xmlrpc
 
 import (
-	"bytes"
 	"encoding/xml"
 	"iis_server/apiq"
 	"io"
@@ -77,7 +76,5 @@ func xmlRPCHandler(w http.ResponseWriter, r *http.Request) {
 		resp.Params.Param = append(resp.Params.Param, ResultValue{c.GradIme, strings.Trim(c.Podatci.Temp, " ")})
 	}
 
-	var buf bytes.Buffer
-	xml.NewEncoder(&buf).Encode(resp)
-	w.Write(buf.Bytes())
+	xml.NewEncoder(w).Encode(resp)
 }
