@@ -35,10 +35,10 @@ func (*WeaterService) GetWeatherForCity(query string) ([]City, error) {
 	}
 	// defer root.Free()
 
-	return FindCity(root, query)
+	return findCity(root, query)
 }
 
-func FindCity(node types.Node, query string) ([]City, error) {
+func findCity(node types.Node, query string) ([]City, error) {
 	xpathQ := fmt.Sprintf("//Grad[contains(GradIme,'%s')]", query)
 	rez := xpath.NodeList(node.Find(xpathQ))
 	city := make([]City, 0, len(rez))

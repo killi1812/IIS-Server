@@ -62,6 +62,8 @@ func headersMiddleware(next http.Handler) http.Handler {
 		headers.Add("Vary", "Access-Control-Request-Headers")
 		headers.Add("Access-Control-Allow-Headers", "Content-Type, Origin, Accept, token, Access-Control-Allow-Origin, Authorization")
 		headers.Add("Access-Control-Allow-Methods", "GET,POST,OPTIONS,DELETE,PUT")
+		headers.Add("Access-Control-Max-Age", "86400")
+
 		if r.Method == "OPTIONS" {
 			return
 		}
