@@ -1,9 +1,11 @@
-package apiq
+package apidata
 
 import (
 	"encoding/xml"
+	"errors"
 	"fmt"
-	"net/http"
+	"iis_server/apiq"
+	"os"
 	"strings"
 
 	"github.com/killi1812/libxml2/parser"
@@ -12,17 +14,23 @@ import (
 	"go.uber.org/zap"
 )
 
-type WeaterService struct{}
+var ErrNotFound = errors.New("file not found")
 
-func (*WeaterService) GetWeatherForCity(query string) ([]City, error) {
-	res, err := http.Get("http://vrijeme.hr/hrvatska_n.xml")
+// TODO: format xml style
+type userInfoRepo struct {
+	users []apiq.UserInfo
+}
+
+func Search(username string) ([]apiq.UserInfo, error) {
+	// TODO: see about mode
+	file, err := os.OpenFile("userInfoRepo.xml", os.O_RDONLY, os.ModeCharDevice)
 	if err != nil {
-		return nil, err
+		fmt.Println("Error reading file:", err)
+		return nil, ErrNotFound
 	}
-	// TODO: ne parsa zadni node, mislim da nije istina
+
 	p := parser.New()
-	doc, err := p.ParseReader(res.Body)
-	defer res.Body.Close()
+	doc, err := p.ParseReader(file)
 	if err != nil {
 		return nil, err
 	}
@@ -33,18 +41,18 @@ func (*WeaterService) GetWeatherForCity(query string) ([]City, error) {
 		zap.S().Debugf("Failed to fetch document element: %s", err)
 		return nil, err
 	}
-	// defer root.Free()
+	rez, err := find(root, "")
 
-	return FindCity(root, query)
+	return rez, nil
 }
 
-func FindCity(node types.Node, query string) ([]City, error) {
+func find(node types.Node, query string) ([]apiq.UserInfo, error) {
 	xpathQ := fmt.Sprintf("//Grad[contains(GradIme,'%s')]", query)
 	rez := xpath.NodeList(node.Find(xpathQ))
-	city := make([]City, 0, len(rez))
+	city := make([]apiq.UserInfo, 0, len(rez))
 
 	for _, cnode := range rez {
-		var loc City
+		var loc apiq.UserInfo
 		dec := strings.NewReader(cnode.String())
 		err := xml.NewDecoder(dec).Decode(&loc)
 		if err != nil {

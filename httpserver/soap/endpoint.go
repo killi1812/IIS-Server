@@ -61,7 +61,7 @@ func handleSOAPRequest(w http.ResponseWriter, r *http.Request) {
 	if err := xml.Unmarshal(body, &req); err != nil {
 		// TODO: return error
 		zap.S().Errorf("Error reading request")
-		soapErrorResponse(w, http.StatusInternalServerError, err)
+		soapFault(w, http.StatusInternalServerError, err)
 		return
 	}
 
@@ -77,14 +77,14 @@ func handleSOAPRequest(w http.ResponseWriter, r *http.Request) {
 	if err != nil {
 		// TODO: return error
 		zap.S().Errorf("Error Retriving data from an api")
-		soapErrorResponse(w, http.StatusInternalServerError, err)
+		soapFault(w, http.StatusInternalServerError, err)
 		return
 	}
 
 	soapResponse(w, http.StatusOK, data)
 }
 
-func soapErrorResponse(w http.ResponseWriter, code int, data any) {
+func soapFault(w http.ResponseWriter, code int, data any) {
 	// TODO: see how to encode errors
 }
 
