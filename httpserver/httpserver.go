@@ -119,5 +119,5 @@ func handleSearch(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 
-	httpio.WriteStandardHTTPResponse(w, http.StatusInternalServerError, rez[0], nil)
+	httpio.WriteStandardHTTPResponse(w, http.StatusOK, rez[0], nil)
 }

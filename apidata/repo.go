@@ -50,9 +50,14 @@ func Search(username string) ([]apiq.UserInfo, error) {
 	return rez, nil
 }
 
+func Save(userData apiq.UserInfo) error {
+	// TODO: implement
+	return nil
+}
+
 func find(node types.Node, query string) ([]apiq.UserInfo, error) {
 	// TODO: change contains to exact
-	xpathQ := fmt.Sprintf("//UserInfo[contains(Username,'%s')]", query)
+	xpathQ := fmt.Sprintf("//UserInfo[Username='%s']", query)
 	rez, err := node.Find(xpathQ)
 	if err != nil {
 		return nil, err
