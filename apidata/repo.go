@@ -23,7 +23,7 @@ type userInfoRepo struct {
 
 func Search(username string) ([]apiq.UserInfo, error) {
 	// TODO: see about mode
-	file, err := os.OpenFile("userInfoRepo.xml", os.O_RDONLY, os.ModeCharDevice)
+	file, err := os.OpenFile("apidata/data.xml", os.O_RDONLY, os.ModeCharDevice)
 	if err != nil {
 		fmt.Println("Error reading file:", err)
 		return nil, ErrNotFound
@@ -41,9 +41,9 @@ func Search(username string) ([]apiq.UserInfo, error) {
 		zap.S().Debugf("Failed to fetch document element: %s", err)
 		return nil, err
 	}
-	defer root.Free()
+	// defer root.Free()
 
-	rez, err := find(root, "")
+	rez, err := find(root, username)
 	if err != nil {
 		zap.S().Debugf("Failed to find node : %s", err)
 		return nil, err
