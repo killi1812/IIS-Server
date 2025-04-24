@@ -14,8 +14,8 @@ func IgApiFactory() (IGApi, error) {
 	switch config.OPTION_API {
 	case 1:
 		return NewMockApi(), nil
-		// TODO: Implement a real api
 	case 2:
+		// TODO: Implement a real api
 		return nil, nil
 
 	default:

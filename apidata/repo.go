@@ -41,15 +41,21 @@ func Search(username string) ([]apiq.UserInfo, error) {
 		zap.S().Debugf("Failed to fetch document element: %s", err)
 		return nil, err
 	}
+	defer root.Free()
+
 	rez, err := find(root, "")
+	if err != nil {
+		zap.S().Debugf("Failed to find node : %s", err)
+		return nil, err
+	}
 
 	return rez, nil
 }
 
 func find(node types.Node, query string) ([]apiq.UserInfo, error) {
-	xpathQ := fmt.Sprintf("//Grad[contains(GradIme,'%s')]", query)
+	xpathQ := fmt.Sprintf("//UserInfo[contains(Username,'%s')]", query)
 	rez := xpath.NodeList(node.Find(xpathQ))
-	city := make([]apiq.UserInfo, 0, len(rez))
+	userInfos := make([]apiq.UserInfo, 0, len(rez))
 
 	for _, cnode := range rez {
 		var loc apiq.UserInfo
@@ -59,8 +65,8 @@ func find(node types.Node, query string) ([]apiq.UserInfo, error) {
 			return nil, err
 		}
 		zap.S().Infof("adding location: %+v", loc)
-		city = append(city, loc)
+		userInfos = append(userInfos, loc)
 	}
 
-	return city, nil
+	return userInfos, nil
 }

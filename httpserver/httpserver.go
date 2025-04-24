@@ -3,9 +3,10 @@ package httpserver
 import (
 	"context"
 	"errors"
+	"iis_server/apidata"
+	"iis_server/httpserver/httpio"
 	"iis_server/httpserver/restapi/secure"
 	"iis_server/httpserver/restapi/upload"
-	"iis_server/httpserver/soap"
 	"iis_server/httpserver/xmlrpc"
 	"net/http"
 	"sync"
@@ -87,11 +88,30 @@ func setupHandlers(router *mux.Router, schedulerCancel context.CancelFunc) {
 	router.HandleFunc("/upload/xsd", uploadAndValidate).Methods("POST", "OPTIONS")
 	router.HandleFunc("/upload/rng", uploadAndValidate).Methods("POST", "OPTIONS")
 
+	router.HandleFunc("/search/{username}", handleSearch).Methods("GET", "OPTIONS")
+
 	// Secure
 	secure.RegisterEndpoints(router)
-	// SOAP
-	soap.RegisterEnpint(router)
 
 	// XML-RPC
 	xmlrpc.RegisterEndpoint(router)
+}
+
+func handleSearch(w http.ResponseWriter, r *http.Request) {
+	vars := mux.Vars(r)
+	username, ok := vars["username"]
+	if !ok {
+		zap.S().Error("Username parameter missing!")
+		http.Error(w, "Bad request", http.StatusBadRequest)
+		return
+	}
+	zap.S().Debug("Search for user with username = %s", username)
+	rez, err := apidata.Search(username)
+	if err != nil {
+		zap.S().Errorf("Failed to find data err = %+v", err)
+		httpio.WriteStandardHTTPResponse(w, http.StatusInternalServerError, "", err)
+		return
+	}
+
+	httpio.WriteStandardHTTPResponse(w, http.StatusOK, rez, nil)
 }

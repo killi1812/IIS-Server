@@ -9,5 +9,6 @@ const (
 	OPTION_API = 1
 )
 
+// TODO: hide key
 // Key for rapid api
 var RapidApiKey = ""
