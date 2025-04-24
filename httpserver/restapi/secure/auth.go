@@ -8,18 +8,15 @@ import (
 	"github.com/golang-jwt/jwt/v4"
 )
 
-// TODO: see if better to use form or body
 type LoginDto struct {
 	Username string `json:"username"`
 	Password string `json:"password"`
 }
 
-// Login handler (generates tokens)
 func login(w http.ResponseWriter, r *http.Request) {
 	username := r.FormValue("username")
 	password := r.FormValue("password")
 
-	// Dummy authentication (Replace with real authentication)
 	if username != "admin" || password != "password" {
 		http.Error(w, "Invalid credentials", http.StatusUnauthorized)
 		return
@@ -33,7 +30,6 @@ func login(w http.ResponseWriter, r *http.Request) {
 	json.NewEncoder(w).Encode(TokenResponse{AccessToken: accessToken, RefreshToken: refreshToken})
 }
 
-// Refresh token handler
 func refreshTokenHandler(w http.ResponseWriter, r *http.Request) {
 	var req struct {
 		RefreshToken string `json:"refresh_token"`
@@ -43,7 +39,6 @@ func refreshTokenHandler(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 
-	// Parse and verify refresh token
 	token, err := jwt.ParseWithClaims(req.RefreshToken, &Claims{}, func(token *jwt.Token) (interface{}, error) {
 		return jefreshSecret, nil
 	})
@@ -52,14 +47,12 @@ func refreshTokenHandler(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 
-	// Extract claims
 	claims, ok := token.Claims.(*Claims)
 	if !ok || claims.ExpiresAt.Unix() < time.Now().Unix() {
 		http.Error(w, "Expired refresh token", http.StatusUnauthorized)
 		return
 	}
 
-	// Generate new tokens
 	newAccessToken, newRefreshToken, err := generateTokens(claims.Username)
 	if err != nil {
 		http.Error(w, "Error generating tokens", http.StatusInternalServerError)

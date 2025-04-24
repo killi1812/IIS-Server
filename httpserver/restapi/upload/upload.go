@@ -52,7 +52,6 @@ func HandleUploadFile(w http.ResponseWriter, r *http.Request) {
 
 		case errors.As(err, &invalidXmlErr):
 			zap.S().Infof("Invalid xml err = %v", invalidXmlErr)
-			// TODO: return info on where is the invalid xml
 			httpio.WriteStandardHTTPResponse(w, http.StatusOK, nil, invalidXmlErr)
 			return
 

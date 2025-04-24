@@ -19,7 +19,6 @@ func (*WeaterService) GetWeatherForCity(query string) ([]City, error) {
 	if err != nil {
 		return nil, err
 	}
-	// TODO: ne parsa zadni node, mislim da nije istina
 	p := parser.New()
 	doc, err := p.ParseReader(res.Body)
 	defer res.Body.Close()
