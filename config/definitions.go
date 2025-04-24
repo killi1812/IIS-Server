@@ -9,6 +9,7 @@ const (
 	OPTION_API = 1
 )
 
-// TODO: hide key
+// TODO: Read key from env
+
 // Key for rapid api
 var RapidApiKey = ""

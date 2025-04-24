@@ -10,7 +10,6 @@ import (
 
 	"github.com/killi1812/libxml2/parser"
 	"github.com/killi1812/libxml2/types"
-	"github.com/killi1812/libxml2/xpath"
 	"go.uber.org/zap"
 )
 
@@ -41,7 +40,6 @@ func Search(username string) ([]apiq.UserInfo, error) {
 		zap.S().Debugf("Failed to fetch document element: %s", err)
 		return nil, err
 	}
-	// defer root.Free()
 
 	rez, err := find(root, username)
 	if err != nil {
@@ -53,11 +51,19 @@ func Search(username string) ([]apiq.UserInfo, error) {
 }
 
 func find(node types.Node, query string) ([]apiq.UserInfo, error) {
+	// TODO: change contains to exact
 	xpathQ := fmt.Sprintf("//UserInfo[contains(Username,'%s')]", query)
-	rez := xpath.NodeList(node.Find(xpathQ))
-	userInfos := make([]apiq.UserInfo, 0, len(rez))
+	rez, err := node.Find(xpathQ)
+	if err != nil {
+		return nil, err
+	}
+	items := rez.NodeList()
+	if len(items) == 0 {
+		return nil, ErrNotFound
+	}
 
-	for _, cnode := range rez {
+	userInfos := make([]apiq.UserInfo, 0, len(items))
+	for _, cnode := range items {
 		var loc apiq.UserInfo
 		dec := strings.NewReader(cnode.String())
 		err := xml.NewDecoder(dec).Decode(&loc)

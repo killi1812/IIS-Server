@@ -2,7 +2,6 @@ package httpserver
 
 import (
 	"context"
-	"encoding/json"
 	"errors"
 	"iis_server/apidata"
 	"iis_server/httpserver/httpio"
@@ -108,11 +107,17 @@ func handleSearch(w http.ResponseWriter, r *http.Request) {
 	}
 	zap.S().Debugf("Search for user with username = %s", username)
 	rez, err := apidata.Search(username)
-	if err != nil || len(rez) == 0 {
-		zap.S().Errorf("Failed to find data err = %+v", err)
-		httpio.WriteStandardHTTPResponse(w, http.StatusInternalServerError, "Not found", err)
+	if err != nil {
+		zap.S().Debugf("Failed to find data err = %+v", err)
+		if errors.Is(err, apidata.ErrNotFound) {
+			zap.S().Debugf("Trying to query api")
+			// TODO: query api
+			httpio.WriteStandardHTTPResponse(w, http.StatusOK, nil, err)
+			return
+		}
+		httpio.WriteStandardHTTPResponse(w, http.StatusInternalServerError, nil, err)
 		return
 	}
 
-	json.NewEncoder(w).Encode(rez[0])
+	httpio.WriteStandardHTTPResponse(w, http.StatusInternalServerError, rez[0], nil)
 }

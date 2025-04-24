@@ -15,7 +15,8 @@ type StandardHTTPResponse struct {
 	Status     string `json:"status"`
 	Error      string `json:"error"`
 	TimeStamp  string `json:"timeStamp"`
-	Data       any    `json:"data"`
+	// TODO: see if this will make errors
+	Data any `json:"data,omitempty"`
 }
 
 func GetStandardHTTPResponse(Data any, err error) StandardHTTPResponse {
@@ -38,7 +39,11 @@ func GetStandardHTTPResponse(Data any, err error) StandardHTTPResponse {
 	}
 
 	httpResponse.TimeStamp = time.Now().Format(time.RFC3339Nano)
-	httpResponse.Data = Data
+
+	// TODO: see if this will make errors
+	if Data != nil {
+		httpResponse.Data = Data
+	}
 
 	return httpResponse
 }
