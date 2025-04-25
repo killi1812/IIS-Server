@@ -4,6 +4,7 @@ import (
 	"context"
 	"errors"
 	"iis_server/apidata"
+	"iis_server/apiq"
 	"iis_server/httpserver/httpio"
 	"iis_server/httpserver/restapi/secure"
 	"iis_server/httpserver/restapi/upload"
@@ -111,8 +112,14 @@ func handleSearch(w http.ResponseWriter, r *http.Request) {
 		zap.S().Debugf("Failed to find data err = %+v", err)
 		if errors.Is(err, apidata.ErrNotFound) {
 			zap.S().Debugf("Trying to query api")
-			// TODO: query api
-			httpio.WriteStandardHTTPResponse(w, http.StatusOK, nil, err)
+			api, err := apiq.IgApiFactory()
+			if err != nil {
+				panic(err)
+			}
+
+			value, err := api.GetUserInfoByUsername(username)
+			// TODO: save
+			httpio.WriteStandardHTTPResponse(w, http.StatusOK, value, err)
 			return
 		}
 		httpio.WriteStandardHTTPResponse(w, http.StatusInternalServerError, nil, err)
