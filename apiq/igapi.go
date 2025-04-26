@@ -18,7 +18,11 @@ func NewMockApi() *MockApi {
 }
 
 func (api *MockApi) GetUsernameByUserId(userId string) (*InstagramUsername, error) {
-	tmpU, err := url.JoinPath(config.MOCK_API, "id")
+	baseURL := config.MOCK_API
+	if config.OPTION_API == 2 {
+		baseURL = config.REAL_API
+	}
+	tmpU, err := url.JoinPath(baseURL, "id")
 	if err != nil {
 		return nil, err
 	}
@@ -59,8 +63,11 @@ func (api *MockApi) GetUsernameByUserId(userId string) (*InstagramUsername, erro
 }
 
 func (api *MockApi) GetUserInfoByUsername(username string) (*UserInfo, error) {
-	// TODO: Change to api and swich path based on real or mock var
-	tmpU, err := url.JoinPath(config.REAL_API, "profile2")
+	baseURL := config.MOCK_API
+	if config.OPTION_API == 2 {
+		baseURL = config.REAL_API
+	}
+	tmpU, err := url.JoinPath(baseURL, "profile2")
 	if err != nil {
 		return nil, err
 	}

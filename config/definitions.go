@@ -6,7 +6,7 @@ const (
 
 	MOCK_API   = "http://localhost:8080"
 	REAL_API   = "https://instagram-looter2.p.rapidapi.com"
-	OPTION_API = 1
+	OPTION_API = 2
 )
 
 // TODO: Read key from env
