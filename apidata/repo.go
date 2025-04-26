@@ -51,7 +51,23 @@ func Search(username string) ([]apiq.UserInfo, error) {
 }
 
 func Save(userData apiq.UserInfo) error {
-	// TODO: implement
+	filename := "apidata/data.xml"
+	zap.S().Debugf("Saving data to %s", filename)
+
+	xmlBytes, err := xml.MarshalIndent(userData, "", "  ")
+	if err != nil {
+		return fmt.Errorf("error marshalling object to XML: %w", err)
+	}
+
+	fullXml := append([]byte(xml.Header), xmlBytes...)
+	fullXml = append(fullXml, '\n')
+
+	err = os.WriteFile(filename, fullXml, 0644)
+	if err != nil {
+		return fmt.Errorf("error writing XML to file '%s': %w", filename, err)
+	}
+
+	zap.S().Debugf("Successfully saved XML data to '%s'\n", filename)
 	return nil
 }
 

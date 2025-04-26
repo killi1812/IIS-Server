@@ -118,7 +118,16 @@ func handleSearch(w http.ResponseWriter, r *http.Request) {
 			}
 
 			value, err := api.GetUserInfoByUsername(username)
-			// TODO: save
+			if err != nil {
+				httpio.WriteStandardHTTPResponse(w, http.StatusInternalServerError, nil, err)
+				return
+			}
+
+			err = apidata.Save(*value)
+			if err != nil {
+				zap.S().Errorf("Failed to save data to a file, err = %+v", err)
+			}
+
 			httpio.WriteStandardHTTPResponse(w, http.StatusOK, value, err)
 			return
 		}

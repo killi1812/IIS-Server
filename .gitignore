@@ -25,13 +25,12 @@ go.work
 go.work.sum
 
 # env file
-.env
+*.env
 
 # sum file
 go.sum
 # old files
-.old
-
+*.old
 *.swap
 
 # log
