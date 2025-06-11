@@ -3,6 +3,7 @@ package secure
 import (
 	"encoding/json"
 	"net/http"
+	"os"
 	"time"
 
 	"github.com/golang-jwt/jwt/v4"
@@ -16,8 +17,7 @@ type LoginDto struct {
 func login(w http.ResponseWriter, r *http.Request) {
 	username := r.FormValue("username")
 	password := r.FormValue("password")
-
-	if username != "admin" || password != "password" {
+	if username != os.Getenv("USERNAME") || password != os.Getenv("PASSWORD") {
 		http.Error(w, "Invalid credentials", http.StatusUnauthorized)
 		return
 	}
