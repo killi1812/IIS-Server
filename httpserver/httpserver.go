@@ -91,7 +91,7 @@ func setupHandlers(router *mux.Router, schedulerCancel context.CancelFunc) {
 	router.HandleFunc("/upload/xsd", uploadAndValidate).Methods("POST", "OPTIONS")
 	router.HandleFunc("/upload/rng", uploadAndValidate).Methods("POST", "OPTIONS")
 
-	router.HandleFunc("/validate/jaxb", validateJaxb).Methods("GET", "OPTIONS")
+	router.HandleFunc("/validate/jaxb/{file}", validateJaxb).Methods("GET", "OPTIONS")
 
 	router.HandleFunc("/search/{username}", handleSearch).Methods("GET", "OPTIONS")
 
@@ -143,12 +143,21 @@ func handleSearch(w http.ResponseWriter, r *http.Request) {
 }
 
 func validateJaxb(w http.ResponseWriter, r *http.Request) {
+	vars := mux.Vars(r)
+	fileName, ok := vars["file"]
+	if !ok {
+		zap.S().Error("Username parameter missing!")
+		http.Error(w, "Bad request", http.StatusBadRequest)
+		return
+	}
 	zap.S().Debugf("Calling jAXB validateion")
 
-	jaxbCmd := exec.Command("java", "-jar", "./dist/DokumentApplication.jar", "./schemas/schema.xsd", "./uploads/data.xml")
+	jaxbCmd := exec.Command("java", "-jar", "./dist/DokumentApplication.jar", "./schemas/schema.xsd", "./uploads/"+fileName)
 	rez, err := jaxbCmd.Output()
 	if err != nil {
 		zap.S().Errorf("JAXB error: %+v", err)
+		httpio.WriteStandardHTTPResponse(w, http.StatusInternalServerError, nil, err)
+		return
 	}
 
 	strRez := string(rez)
