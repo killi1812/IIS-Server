@@ -10,6 +10,8 @@ import (
 	"iis_server/httpserver/restapi/upload"
 	"iis_server/httpserver/xmlrpc"
 	"net/http"
+	"os/exec"
+	"strings"
 	"sync"
 	"time"
 
@@ -89,6 +91,8 @@ func setupHandlers(router *mux.Router, schedulerCancel context.CancelFunc) {
 	router.HandleFunc("/upload/xsd", uploadAndValidate).Methods("POST", "OPTIONS")
 	router.HandleFunc("/upload/rng", uploadAndValidate).Methods("POST", "OPTIONS")
 
+	router.HandleFunc("/validate/jaxb", validateJaxb).Methods("GET", "OPTIONS")
+
 	router.HandleFunc("/search/{username}", handleSearch).Methods("GET", "OPTIONS")
 
 	// Secure
@@ -136,4 +140,41 @@ func handleSearch(w http.ResponseWriter, r *http.Request) {
 	}
 
 	httpio.WriteStandardHTTPResponse(w, http.StatusOK, rez[0], nil)
+}
+
+func validateJaxb(w http.ResponseWriter, r *http.Request) {
+	zap.S().Debugf("Calling jAXB validateion")
+
+	jaxbCmd := exec.Command("java", "-jar", "./dist/DokumentApplication.jar", "./schemas/schema.xsd", "./uploads/data.xml")
+	rez, err := jaxbCmd.Output()
+	if err != nil {
+		zap.S().Errorf("JAXB error: %+v", err)
+	}
+
+	strRez := string(rez)
+	zap.S().Infof("JAXB rezult:\n %+v", strRez)
+
+	if strings.Contains(strRez, "VALIDACIJA USPJEŠNA") {
+		data := strings.Split(strRez, "\n")
+		httpio.WriteStandardHTTPResponse(w, http.StatusOK, data[1], nil)
+		return
+	}
+
+	data := strings.Split(strRez, "\n")
+	errResponse := errResp{}
+	errResponse.line = strings.Trim(strings.Split(data[2], ":")[1], "\t ")
+	errResponse.column = strings.Trim(strings.Split(data[3], ":")[1], "\t ")
+	errResponse.message = strings.Trim(strings.SplitAfterN(data[4], ":", 2)[1], "\t ")
+
+	httpio.WriteStandardHTTPResponse(w, http.StatusOK, nil, errResponse)
+}
+
+type errResp struct {
+	line    string
+	column  string
+	message string
+}
+
+func (e errResp) Error() string {
+	return "line:" + e.line + ";column:" + e.column + ";message:" + e.message + ";"
 }
