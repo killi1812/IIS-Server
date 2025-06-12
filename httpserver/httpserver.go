@@ -10,6 +10,7 @@ import (
 	"iis_server/httpserver/restapi/upload"
 	"iis_server/httpserver/xmlrpc"
 	"net/http"
+	"os"
 	"os/exec"
 	"strings"
 	"sync"
@@ -92,6 +93,7 @@ func setupHandlers(router *mux.Router, schedulerCancel context.CancelFunc) {
 	router.HandleFunc("/upload/rng", uploadAndValidate).Methods("POST", "OPTIONS")
 
 	router.HandleFunc("/validate/jaxb/{file}", validateJaxb).Methods("GET", "OPTIONS")
+	router.HandleFunc("/upload", listFiles).Methods("GET", "OPTIONS")
 
 	router.HandleFunc("/search/{username}", handleSearch).Methods("GET", "OPTIONS")
 
@@ -186,4 +188,23 @@ type errResp struct {
 
 func (e errResp) Error() string {
 	return "line:" + e.line + ";column:" + e.column + ";message:" + e.message + ";"
+}
+
+func listFiles(w http.ResponseWriter, r *http.Request) {
+	data, err := os.ReadDir("uploads")
+	if err != nil {
+		zap.S().Errorf("JAXB error: %+v", err)
+		httpio.WriteStandardHTTPResponse(w, http.StatusInternalServerError, nil, err)
+		return
+	}
+
+	names := make([]string, 0, len(data))
+
+	for _, file := range data {
+		if !file.IsDir() {
+			names = append(names, file.Name())
+		}
+	}
+
+	httpio.WriteStandardHTTPResponse(w, http.StatusOK, names, nil)
 }
